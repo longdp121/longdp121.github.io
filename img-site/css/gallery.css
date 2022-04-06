@@ -1,13 +1,11 @@
+
 #content {
-    background-color: green;
+    display: flex;
     width: 100%;
+    margin-top: 40px;
 }
 
-h1 {
-    color: red;
-}
-
-#conten .gallery-content {
+#content .gallery-content {
     width: 100%;
     margin: auto;
 }
@@ -17,10 +15,19 @@ h1 {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
+    border-radius: 50%;
 }
 
 #content .gallery-item {
     float: left;
     width: calc(100% / 3);
     justify-content: center;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#content .gallery-item:hover {
+    transform: scale(1.2);
 }
