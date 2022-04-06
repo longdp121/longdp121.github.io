@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+#shop {
+    width: 100%;
+    display: flex;
+}
+
+.shop-items {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item {
+    text-align: center;
+}
+
+.item img {
+    width: 300px;
+    margin: 0 15px;
+}
+
+.item span a {
+    text-decoration: none;
+    color: black;
+}
+
+.item span:hover a {
+    color: gray;
+    font-weight: bold;
+}
+
