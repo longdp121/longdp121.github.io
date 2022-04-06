@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#wrap {
+    max-width: 1000px;
+    margin: auto;
+}
+
+#banner img {
+    width: 100%;
+}
+
+#main-menu {
+    text-align: center;
+    height: 40px;
+    background-color: bisque;
+}
+
+#main-menu li {
+    list-style: none;
+    display: inline-block;
+    line-height: 40px;
+}
+
+#main-menu a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: gray;
+    margin: 0 10px;
+    padding: calc((40px - 1em)/2);
+}
+
+#main-menu li:hover a {
+    color: darkgray;
+}
+
+#main-menu .active {
+    font-weight: bold;
+    background-color: white;
+}
