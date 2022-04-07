@@ -32,3 +32,7 @@ h1 {
     margin-left: 24px;
     font-size: 28px;
 }
+
+.back-btn:hover i {
+    font-weight: bold;
+}
