@@ -36,6 +36,10 @@
     padding: 0;
 }
 
+#main-menu .link {
+    width: 180px;
+}
+
 #main-menu li {
     list-style: none;
     display: inline-block;
