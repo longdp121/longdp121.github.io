@@ -8,6 +8,10 @@
     max-width: 1000px;
     margin: auto;
 }
+#banner {
+    max-width: 100%;
+    box-sizing: content-box;
+}
 
 #banner img {
     width: 100%;
@@ -15,8 +19,21 @@
 
 #main-menu {
     text-align: center;
-    height: 40px;
+    min-height: 40px;
+    overflow: hidden;;
     background-color: bisque;
+}
+
+#main-menu .btns {
+    /* max-width: calc(100% / 4);
+    min-height: cal(100% / 2); */
+    margin: auto;
+}
+
+.btns ul {
+    width: 100%;
+    text-align: center;
+    padding: 0;
 }
 
 #main-menu li {

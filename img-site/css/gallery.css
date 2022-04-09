@@ -1,6 +1,7 @@
 
 #content {
     display: flex;
+    flex-direction: row;
     width: 100%;
     margin-top: 40px;
 }
@@ -8,24 +9,26 @@
 #content .gallery-content {
     width: 100%;
     margin: auto;
-}
-
-#content .gallery-content img {
-    width: 200px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
-    border-radius: 50%;
+    display: none;
 }
 
 #content .gallery-item {
-    float: left;
+    flex-direction: row;
+    /* float: left; */
     width: calc(100% / 3);
     justify-content: center;
     text-align: center;
     margin-top: 15px;
     margin-bottom: 15px;
+}
+
+#content .gallery-content img {
+    width: 13rem;
+    display: block;
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin-bottom: 10px;
+    border-radius: 50%;
 }
 
 #content .gallery-item:hover {
