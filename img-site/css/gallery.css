@@ -36,10 +36,11 @@
     width: 100%;
     height: auto;
     font-size: 20px;
-    margin-top: 20px;
+    padding: 20px calc((100% - 13rem)/2);
+    /* margin-top: 20px;
     padding-bottom: 20px;
     padding-right: calc((100% - 13rem)/2);
-    padding-left: calc((100% - 13rem)/2);
+    padding-left: calc((100% - 13rem)/2); */
 }
 
 #content .gallery-item:hover {
