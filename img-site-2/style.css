@@ -18,12 +18,13 @@
     display: flex;
     flex-direction: column;
     background-color: #170f23;
-    padding: 0 3%;
+    padding: 15px 3%;
 }
 
 .song {
     width: 100%;
     height: auto;
+    margin: 15px 0;
 }
 
 .singer {
@@ -32,6 +33,7 @@
     margin: auto;
     display: flex;
     justify-content: flex-start;
+    padding-bottom: 5px;
 }
 
 .singer .singer-img img {
@@ -48,34 +50,43 @@
 }
 
 .singer .singer-text h4 {
-    color: gray;
+    color: rgb(179, 165, 165);
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2.5px 0;
 }
 
 .singer .singer-text p {
     color: white;
     font-weight: bold;
+    padding: 2.5 0;
 }
 
 .song-list {
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-content: center;
+    padding-top: 5px;
+    flex-wrap: wrap;
 }
 
 .song-item {
     width: calc(100% / 5.5);
+    min-width: 188px;
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    padding: 0 15px;
 }
 
-.song-item h4 {
+.song-item .song-name {
     color: white;
     font-size: 10px;
+    padding: 10px 0 5px 0;
 }
 
 .song-item p {
@@ -95,12 +106,14 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    margin: 15px 0;
 }
 
 .new-song-title {
     width: 100%;
     display: flex;
     justify-content: flex-start;
+    padding-bottom: 5px;
 }
 
 .new-song-title h3 {
@@ -108,3 +121,129 @@
     font-size: 14px;
 }
 
+.gen-list {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 5px;
+    flex-wrap: wrap;
+    
+}
+
+.gen-item {
+    width: calc(100% / 5.5);
+    min-width: 188px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 15px;
+}
+
+.gen-img {
+    display: flex;
+    color: black;
+    position: relative;
+    text-align: center;
+}
+
+.vpop-box {
+    border-bottom: 5px solid #61ff01;
+    border-radius: 3%;
+}
+
+.vpop-month {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    font-weight: bold;
+    font-size: 10px;
+    color: #61ff01;
+}
+
+.usuk-box {
+    border-bottom: 5px solid #64fee9;
+    border-radius: 3%;
+}
+
+.usuk-month {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    font-weight: bold;
+    font-size: 10px;
+    color: #64fee9;
+}
+
+.kpop-box {
+    border-bottom: 5px solid #fbeb01;
+    border-radius: 3px;
+}
+
+.kpop-month {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    font-weight: bold;
+    font-size: 10px;
+    color: #fbeb01;
+}
+
+.cpop-box {
+    border-bottom: 5px solid #4ab4ff;
+    border-radius: 3%;
+}
+
+.cpop-month {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    font-weight: bold;
+    font-size: 10px;
+    color: #4ab4ff;
+}
+
+.vindie-box {
+    border-bottom: 5px solid #f27104;
+    border-radius: 3%;
+}
+
+.vindie-month {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    font-weight: bold;
+    font-size: 10px;
+    color: #f27104;
+}
+
+.gen-img img {
+    width: 100%;
+    border-top-left-radius: 3%;
+    border-top-right-radius: 3%;
+}
+
+.gen-img .gen-title {
+    position: absolute;
+    bottom: 25px;
+    left: 15px;
+    color: white;
+    font-size: 10px;
+    color: white;
+    font-weight: bold;
+    padding: 10px 0 5px 0;
+}
+
+.gen-item .gen-title-month {
+    font-size: 10px;
+    color: white;
+    padding: 10px 0 5px 0;
+}
+
+.gen-item .singer-list {
+    font-size: 10px;
+    color: grey;
+    width: 100%;
+}
