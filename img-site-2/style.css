@@ -67,20 +67,18 @@
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: center;
-    align-content: center;
     padding-top: 5px;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .song-item {
     width: calc(100% / 5.5);
-    min-width: 188px;
+    min-width: 180px;
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 0 15px;
 }
 
 .song-item .song-name {
@@ -125,21 +123,18 @@
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: center;
-    align-content: center;
     padding-top: 5px;
     flex-wrap: wrap;
-    
+    justify-content: space-between;
 }
 
 .gen-item {
     width: calc(100% / 5.5);
-    min-width: 188px;
+    min-width: 180px;
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 0 15px;
 }
 
 .gen-img {
