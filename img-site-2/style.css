@@ -265,6 +265,7 @@
     color: white;
     font-weight: bold;
     padding: 10px 0 5px 0;
+    transition: linear;
 }
 
 .gen-item:hover img {
