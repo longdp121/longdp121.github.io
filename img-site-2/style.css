@@ -7,7 +7,7 @@
 #wrap {
     max-width: 1000px;
     margin: auto;
-    height: 1000px;
+    height: auto;
     /* background-color: aqua; */
 }
 
@@ -80,16 +80,19 @@
     flex-direction: column;
     justify-content: flex-start;
     padding: 2.5px 0 10px 0;
+    position: relative;
 }
 
 .song-item .song-name {
     color: white;
+    opacity: 0.6;
     font-size: 10px;
     padding: 10px 0 5px 0;
 }
 
 .song-item p {
     color: gray;
+    opacity: 0.6;
     font-size: 10px;
     font-weight: bold;
 }
@@ -99,6 +102,15 @@
     border-radius: 3%;
 }
 
+.song-item i {
+    position: absolute;
+    font-size: 50px;
+    color: white;
+    top: calc((170px - 50px) / 2);
+    left: calc((170px - 50px) / 2);
+    opacity: 0;
+}
+
 .new-song {
     width: 100%;
     height: auto;
@@ -106,6 +118,23 @@
     flex-direction: column;
     justify-content: flex-start;
     margin: 15px 0;
+}
+
+.song-item:hover .song-name {
+    opacity: 1;
+}
+
+.song-item:hover p {
+    opacity: 1;
+}
+
+.song-item:hover .play-btn {
+    opacity: 0.5;
+}
+
+.link-play-btn:visited {
+    color: #61ff01;
+    font-size: 100px;
 }
 
 .new-song-title {
@@ -151,11 +180,6 @@
 }
 
 .vpop-month {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    font-weight: bold;
-    font-size: 10px;
     color: #61ff01;
 }
 
@@ -165,11 +189,6 @@
 }
 
 .usuk-month {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    font-weight: bold;
-    font-size: 10px;
     color: #64fee9;
 }
 
@@ -179,11 +198,6 @@
 }
 
 .kpop-month {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    font-weight: bold;
-    font-size: 10px;
     color: #fbeb01;
 }
 
@@ -193,11 +207,6 @@
 }
 
 .cpop-month {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    font-weight: bold;
-    font-size: 10px;
     color: #4ab4ff;
 }
 
@@ -207,11 +216,6 @@
 }
 
 .vindie-month {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    font-weight: bold;
-    font-size: 10px;
     color: #f27104;
 }
 
@@ -232,6 +236,14 @@
     padding: 10px 0 5px 0;
 }
 
+.gen-img .month {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    font-weight: bold;
+    font-size: 10px;
+}
+
 .gen-item .gen-title-month {
     font-size: 10px;
     color: white;
@@ -242,4 +254,52 @@
     font-size: 10px;
     color: grey;
     width: 100%;
+}
+
+.gen-item:hover .gen-img .gen-title {
+    position: absolute;
+    bottom: 25px;
+    left: 15px;
+    color: white;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    padding: 10px 0 5px 0;
+}
+
+.gen-item:hover img {
+    opacity: 0.2;
+}
+
+.gen-item:hover .gen-title-month {
+    opacity: 0.2;
+}
+
+.gen-item:hover .singer-list {
+    opacity: 0.2;
+}
+
+.vpop-box:hover {
+    border-bottom: 5px solid rgba(97, 255, 1, 0.2);
+    border-radius: 3%;
+}
+
+.usuk-box:hover {
+    border-bottom: 5px solid rgba(100, 254, 233, 0.2);
+    border-radius: 3%;
+}
+
+.kpop-box:hover {
+    border-bottom: 5px solid rgba(251, 235, 1, 0.2);
+    border-radius: 3%;
+}
+
+.cpop-box:hover {
+    border-bottom: 5px solid rgba(74, 180, 255, 0.2);
+    border-radius: 3%;
+}
+
+.vindie-box:hover {
+    border-bottom: 5px solid rgba(242, 113, 4, 0.2);
+    border-radius: 3%;
 }
