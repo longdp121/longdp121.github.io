@@ -1,0 +1,37 @@
+.content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    /* padding-right: 15px;
+    padding-left: 15px; */
+}
+
+.content .img-item {
+    width: calc(100% / 3.3);
+    max-width: 254px;
+    display: block;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.content .img-item a {
+    text-decoration: none;
+    color: #003300;
+}
+
+.content .img-item a img {
+    max-width: 100%;
+    transition: 0.3s;
+    border-radius: 3%;
+}
+
+.content .img-item:hover {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}

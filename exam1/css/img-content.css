@@ -1,0 +1,47 @@
+.img-content {
+    width: 600px;
+    height: auto;
+    margin: auto;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.img-content .img {
+    width: 60%;
+    height: auto;
+}
+
+.img-content .img img {
+    max-width: 100%;
+}
+
+.img-content .text-content {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    justify-content: space-between;
+}
+
+.text-content h1 {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.text-content .text {
+    justify-content: flex-start;
+}
+
+.text-content .btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.text-content .btn a {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+}
