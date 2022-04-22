@@ -45,6 +45,11 @@
     color: bisque;
 }
 
+.banner .social-list a:hover {
+    color: white;
+    font-weight: bold;
+}
+
 .main-menu {
     display: flex;
     min-height: 40px;
