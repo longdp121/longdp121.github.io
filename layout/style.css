@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrap {
+    max-width: 1000px;
+    margin: 15px auto 15px auto;
+    background-color: rgba(244,247,250,255);
+}
+
+.path-bar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.path-bar .arrow {
+    margin: 0 20px 0 20px;
+}
+
+.main-content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.posts {
+    width: 62.5%;
+    height: auto;
+}
+
+.post-item {
+    width: 100%;
+    height: auto;
+    display: flex;
+    background-color: white;
+    border-radius: 2%;
+    box-shadow: 1px 1px rgba(212,215,217,255);
+    margin: 15px 0 15px 0;
+}
+
+.calendar {
+    --width: 100%;
+}
+
+.calendar {
+    width: 100%;
+    height: 100%;
+}
+
+.calendar {
+    width: calc(var(--width) * 1/5);
+    height: 125px;  
+    text-align: center;
+}
+
+.year {
+    font-size: 15px;
+    color: white;
+    background-color: rgba(239,83,33,255);
+    border-top-left-radius: 3%;
+}
+
+.day-month {
+    height: calc(125px - 17px);
+    font-size: 17px;
+    color: white;
+    /* padding-top: calc((125px - (2em + 17px))/4);
+    padding-bottom: calc((125px - (2em + 17px))/4); */
+    background-color: rgba(242,108,64,255);
+    border-bottom-left-radius: 3%;
+}
+
+.day-month .day {
+    padding-top: calc(((125px -17px) - (2em + 17px))/4);
+}
+
+.day-month .month {
+    padding-bottom: calc(((125px - 17px) - (2em + 17px))/4);
+}
+
+.content {
+    width: calc(100% * 4/5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 10px 30px 10px;
+}
+
+.content-info {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 70px;
+    border-bottom: 1px solid black;
+    position: relative;
+}
+
+.content-info a {
+    position: absolute;
+    left: 0;
+    bottom: -25px;
+    text-decoration: none;
+}
+
+
+.gmap {
+    width: 32.5%;
+    height: auto;
+}
