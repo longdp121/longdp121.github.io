@@ -13,9 +13,9 @@ alert(greeting(realName))
 
 // Squaring
 
-function squaring(myNum) {
-    return Math.pow(myNum, 2)
+function squaring(num) {
+    return Math.pow(num, 2)
 }
 
 let myNum = 10;
-alert(`Square of ${myNum} is ${squaring(myNum)}`)
+alert(`${myNum}^2 = ${squaring(myNum)}`)
