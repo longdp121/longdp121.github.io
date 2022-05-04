@@ -7,7 +7,7 @@ function century(year) {
     let result = Math.ceil(year / 100);
     let yearLenght = result.toString().length;
     let firstNum = result.toString()[0];
-    let lastNum = result.toString()[result.toString().length - 1];
+    let lastNum = result.toString().slice(-1);
     if ((firstNum == 1) & (yearLenght == 2)) {
       console.log(`Year ${year} belong to ${result}th century`);
     } else {
