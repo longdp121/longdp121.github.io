@@ -26,7 +26,8 @@ function century(year) {
 
 // Bài 2. Cho 1 chuỗi dài hơn 15 ký tự. Viết 1 function cắt chuỗi, lấy ra 10 ký tự đầu tiên và thêm vào dấu " …" ở cuối chuỗi.
 
-function cutString(myString) {
+function cutString(inputString) {
+  let myString = inputString.toString();
   if (myString.length <= 10) {
     console.log(myString);
   } else {
