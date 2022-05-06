@@ -20,6 +20,7 @@ function squaring(num) {
 }
 
 let myNum = 10;
+<<<<<<< Updated upstream
 console.log(`${myNum}^2 = ${squaring(myNum)}`);
 
 
@@ -38,3 +39,9 @@ function circleSquare(r) {
 }
 
 console.log(circleSquare(7))
+=======
+alert(`${myNum}^2 = ${squaring(myNum)}`)
+
+let num = Math.ceil(101/100)
+console.log(num)
+>>>>>>> Stashed changes
