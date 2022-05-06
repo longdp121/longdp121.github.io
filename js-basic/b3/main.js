@@ -3,14 +3,14 @@
 function repeatString(myString) {
   let result = "";
   for (let i = 0; i < 10; i++) {
-    result += '-' + myString;
+    result += "-" + myString;
   }
-//   return result.replaceAll(
-//     `${myString.slice(-1)}${myString[0]}`,
-//     `${myString.slice(-1)}-${myString[0]}`;
-//     // return result
-//   );
-  return result
+  //   return result.replaceAll(
+  //     `${myString.slice(-1)}${myString[0]}`,
+  //     `${myString.slice(-1)}-${myString[0]}`;
+  //     // return result
+  //   );
+  return result.substring(1);
 }
 
 //  Cho 1 số nguyên dương n. Viết hàm tính n giai thừa (n!). Ví dụ: n = 5, kết quả trả về là 5! = 1 * 2 * 3 * 4 * 5 = 120.
