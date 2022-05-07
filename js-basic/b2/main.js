@@ -42,3 +42,22 @@ function upperFirstLetter(myString) {
   let remainOfString = myString.slice(1).toLowerCase();
   console.log(`${firstLetter}${remainOfString}`);
 }
+
+// Bonus: Viet mot ham gom 2 tham so. Tham so 1 la chuoi, tham so 2 la so ky tu can cat
+
+function cutStringByNumber(myString, num) {
+  console.log(myString.slice(0, num))
+  console.log(num)
+}
+
+//Bonus 2: Cho mot chuoi, thay khoang trang bang dau gach ngang
+
+function replaceSpace(myString) {
+  let dash = '-'
+  return myString.replace(/ /g, dash)
+}
+
+let mt = 'Hello anh em'
+
+
+console.log(mt.split(' '))
