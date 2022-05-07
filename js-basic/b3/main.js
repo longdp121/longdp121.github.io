@@ -78,10 +78,8 @@ function remainderArray(numberArray) {
 
 function printNumber() {
   for (let i = 1; i <= 100; i++) {
-    if (i % 2 == 0) {
-      document.write(`<p style="color: green">${i}</p>`);
-    } else {
-      document.write(`<p style="color: red">${i}</p>`);
-    }
+    document.write(`<p style="color: green">${i}</p>`);
+    i++;
+    document.write(`<p style="color: red">${i}</p>`);
   }
 }
