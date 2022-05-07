@@ -8,19 +8,21 @@ function century(year) {
     let yearLenght = result.toString().length;
     let firstNum = result.toString()[0];
     let lastNum = result.toString().slice(-1);
+    let ordinal = "";
     if ((firstNum == 1) & (yearLenght == 2)) {
-      console.log(`Year ${year} belong to ${result}th century`);
+      ordinal = "th";
     } else {
       if (lastNum == 1) {
-        console.log(`Year ${year} belong to ${result}st century`);
+        ordinal = "st";
       } else if (lastNum == 2) {
-        console.log(`Year ${year} belong to ${result}nd century`);
+        ordinal = "nd";
       } else if (lastNum == 3) {
-        console.log(`Year ${year} belong to ${result}rd century`);
+        ordinal = "rd";
       } else {
-        console.log(`Year ${year} belong to ${result}th century`);
+        ordinal = "th";
       }
     }
+    console.log(`Year ${year} belong to ${result}${ordinal} century`);
   }
 }
 
@@ -46,18 +48,17 @@ function upperFirstLetter(myString) {
 // Bonus: Viet mot ham gom 2 tham so. Tham so 1 la chuoi, tham so 2 la so ky tu can cat
 
 function cutStringByNumber(myString, num) {
-  console.log(myString.slice(0, num))
-  console.log(num)
+  console.log(myString.slice(0, num));
+  console.log(num);
 }
 
 //Bonus 2: Cho mot chuoi, thay khoang trang bang dau gach ngang
 
 function replaceSpace(myString) {
-  let dash = '-'
-  return myString.replace(/ /g, dash)
+  let dash = "-";
+  return myString.replace(/ /g, dash);
 }
 
-let mt = 'Hello anh em'
+let mt = "Hello anh em";
 
-
-console.log(mt.split(' '))
+console.log(mt.split(" "));
