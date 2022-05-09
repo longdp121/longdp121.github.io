@@ -5,11 +5,9 @@ function century(year) {
     console.log("Please enter number greater than zero");
   } else {
     let result = Math.ceil(year / 100);
-    let yearLenght = result.toString().length;
-    let firstNum = result.toString()[0];
     let lastNum = result.toString().slice(-1);
     let ordinal = "";
-    if ((firstNum == 1) & (yearLenght == 2)) {
+    if (10 <= result && result <= 20) {
       ordinal = "th";
     } else {
       if (lastNum == 1) {
