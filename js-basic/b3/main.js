@@ -16,14 +16,16 @@ function repeatString(myString) {
 //  Cho 1 số nguyên dương n. Viết hàm tính n giai thừa (n!). Ví dụ: n = 5, kết quả trả về là 5! = 1 * 2 * 3 * 4 * 5 = 120.
 
 function factorial(num) {
-  if (num == 0) {
+  if (num == 0 && num == 1) {
     return `${num}! = 1`;
   } else {
     let result = 1;
+    let calc = "";
     for (let i = 1; i <= num; i++) {
       result *= i;
+      calc += `* ${i} `
     }
-    return `${num}! = ${result}`;
+    return `${num}! = ${calc.substring(1).trim()} = ${result}`;
   }
 }
 
