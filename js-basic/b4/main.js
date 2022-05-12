@@ -2,7 +2,7 @@
 
 function checkNumber(a, b) {
   if (typeof a != "number" || typeof b != "number") {
-    return `Please enter number`;
+    return "Please enter number";
   } else {
     let maxNum;
     if (a > b) {
@@ -19,7 +19,7 @@ function checkNumber(a, b) {
 // Bài 2. Viết 1 hàm dùng để tính giai thừa của 1 số. Kiểm tra tham số đầu vào phải là 1 số nguyên >= 0, sau đó tính giai thừa và in ra kết quả.
 
 function factorial(num) {
-  let checkInterger = Number.isInteger(num)
+  let checkInterger = Number.isInteger(num);
   if (num < 0 || checkInterger == false) {
     return "Please enter positive interger number only";
   } else {
