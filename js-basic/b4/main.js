@@ -87,3 +87,23 @@ function translate(lang) {
     }
   }
 }
+
+// Extra Bài 3. Cho 1 mảng các số bất kỳ. Tạo ra 1 mảng mới chỉ chứa các số chẵn lấy ra từ mảng trên và sắp xếp theo thứ tự giảm dần.
+
+let numArr = [134, 34, 343, 564, 7545, 5266, 765, 8, 9019, 1055, 11561, 115462, 133, 1315454, 1115, 15516, 18987, 6618, 1569, 985820]
+
+function orderEvenNum (arr) {
+  let evenNumArr = []
+  for (let i in arr) {
+    if (arr[i] % 2 == 0) {
+      evenNumArr.push(arr[i])
+    }
+  }
+  return evenNumArr.sort(
+    function(a, b) {
+      return b - a
+    }
+  )
+}
+
+// Extra Bài 4. Một trang web cho phép người dùng tạo tài khoản. Hãy viết hàm kiểm tra tính hợp lệ của thông tin người dùng nhập vào. Nếu hợp lệ trả về “Pass”, nếu không hợp lệ trả về “Fail”.
