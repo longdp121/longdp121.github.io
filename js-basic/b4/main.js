@@ -90,20 +90,52 @@ function translate(lang) {
 
 // Extra Bài 3. Cho 1 mảng các số bất kỳ. Tạo ra 1 mảng mới chỉ chứa các số chẵn lấy ra từ mảng trên và sắp xếp theo thứ tự giảm dần.
 
-let numArr = [134, 34, 343, 564, 7545, 5266, 765, 8, 9019, 1055, 11561, 115462, 133, 1315454, 1115, 15516, 18987, 6618, 1569, 985820]
+let numArr = [
+  134, 34, 343, 564, 7545, 5266, 765, 8, 9019, 1055, 11561, 115462, 133,
+  1315454, 1115, 15516, 18987, 6618, 1569, 985820,
+];
 
-function orderEvenNum (arr) {
-  let evenNumArr = []
+function orderEvenNum(arr) {
+  let evenNumArr = [];
   for (let i in arr) {
     if (arr[i] % 2 == 0) {
-      evenNumArr.push(arr[i])
+      evenNumArr.push(arr[i]);
     }
   }
-  return evenNumArr.sort(
-    function(a, b) {
-      return b - a
-    }
-  )
+  return evenNumArr.sort(function (a, b) {
+    return b - a;
+  });
 }
 
-// Extra Bài 4. Một trang web cho phép người dùng tạo tài khoản. Hãy viết hàm kiểm tra tính hợp lệ của thông tin người dùng nhập vào. Nếu hợp lệ trả về “Pass”, nếu không hợp lệ trả về “Fail”.
+/*
+Extra Bài 4. Một trang web cho phép người dùng tạo tài khoản. Hãy viết hàm kiểm tra tính hợp lệ của thông tin người dùng nhập vào. Nếu hợp lệ trả về “Pass”, nếu không hợp lệ trả về “Fail”.
+- Giả sử tham số đầu vào là 1 object có dạng như sau (giá trị của thuộc tính là do người dùng nhập và đều là chuỗi):
+{
+  username: "username",
+  password: "secret",
+  confirm: "secret"
+}
+- Hãy kiểm tra username phải khác rỗng và không được vượt quá 20 ký tự, password phải có độ dài từ 6 đến 32 ký tự, confirm phải giống password.
+*/
+
+let userInfo = {
+  username: "hello_anh_em",
+  password: "mypass123",
+  confirm: "mypass123",
+};
+
+function checkValid(userObject) {
+  if (userObject.username.length > 20 || userObject.username == "") {
+    return "Invalid username. Username cannot be blank or over 20 characters";
+  } else {
+    if (userObject.password.length < 6 || userObject.password.lenght > 32) {
+      return "Password must be longer than 6 and shorter than 32 characters";
+    } else {
+      if (userObject.password != userObject.confirm) {
+        return "Confirm password not match";
+      } else {
+        return "Create account successful";
+      }
+    }
+  }
+}
