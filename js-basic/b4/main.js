@@ -36,7 +36,6 @@ function factorial(num) {
   }
 }
 
-
 /**
  Bài 3. Một sinh viên có điểm kiểm tra môn lập trình web là x dưới dạng số (0 <= x <= 10). Hãy chuyển điểm số sang dạng chữ với điều kiện sau:
 
@@ -48,26 +47,43 @@ Từ 0 đến dưới 4: Điểm F
  */
 
 function score(x) {
-    if (x >= 0 && x <= 10) {
-        let scoreInLetter
-        if (x >= 8.5) {
-            scoreInLetter = 'A'
-        }
-        else if (x >= 7 && x < 8.5) {
-            scoreInLetter = 'B'
-        }
-        else if (x >= 5.5 && x < 7) {
-            scoreInLetter = 'C'
-        }
-        else if (x >= 4 && x < 5.5) {
-            scoreInLetter = 'D'
-        }
-        else {
-            scoreInLetter = 'F'
-        }
-        return scoreInLetter
+  if (x >= 0 && x <= 10) {
+    let scoreInLetter;
+    if (x >= 8.5) {
+      scoreInLetter = "A";
+    } else if (x >= 7 && x < 8.5) {
+      scoreInLetter = "B";
+    } else if (x >= 5.5 && x < 7) {
+      scoreInLetter = "C";
+    } else if (x >= 4 && x < 5.5) {
+      scoreInLetter = "D";
+    } else {
+      scoreInLetter = "F";
     }
-    else {
-        return 'Invalid value'
+    return scoreInLetter;
+  } else {
+    return "Invalid value";
+  }
+}
+
+// Bài 4. Viết hàm translate() có tác dụng dịch từ “Hello” sang 5 thứ tiếng khác nhau (tự chọn) với tham số truyền vào là mã quốc gia, sử dụng switch và mặc định dịch sang tiếng Việt.
+
+function translate(lang) {
+  switch (lang) {
+    default: {
+      return "xin chao";
     }
+    case "ja": {
+      return "こんにちは";
+    }
+    case "ko": {
+      return "안녕하세요";
+    }
+    case "fr": {
+      return "salut";
+    }
+    case "ar": {
+      return "أهلا";
+    }
+  }
 }
