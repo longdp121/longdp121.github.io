@@ -19,8 +19,9 @@ function checkNumber(a, b) {
 // Bài 2. Viết 1 hàm dùng để tính giai thừa của 1 số. Kiểm tra tham số đầu vào phải là 1 số nguyên >= 0, sau đó tính giai thừa và in ra kết quả.
 
 function factorial(num) {
-  if (num < 0) {
-    return "Please enter positive number only";
+  let checkInterger = Number.isInteger(num)
+  if (num < 0 || checkInterger == false) {
+    return "Please enter positive interger number only";
   } else {
     if (num == 1 || num == 0) {
       return `${num}! = 1`;
