@@ -86,20 +86,20 @@ function findMinNum(myList) {
   let minNum = myList[0];
   for (i of myList) {
     if (i < minNum) {
-      minNum = i
+      minNum = i;
     }
   }
-  return minNum
+  return minNum;
 }
 
 // Extra Bài 4. Cho 1 mảng chỉ gồm các giá trị true và false(kiểu boolean). Hãy kiểm tra xem giá trị true xuất hiện lần đầu trong mảng ở vị trí nào.
 
-let boolList = [false, false, true, false, true]
+let boolList = [false, false, true, false, true];
 
 function findFirstTrue(myList) {
   for (let i = 0; i < myList.length; i++) {
     if (myList[i]) {
-      return i
+      return i;
     }
   }
 }
