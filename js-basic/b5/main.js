@@ -103,3 +103,13 @@ function findFirstTrue(myList) {
     }
   }
 }
+
+function findFirstTrue2(myList) {
+  let count = -1;
+  for (i of myList) {
+    count++
+    if (i) {
+      return count
+    }
+  }
+}
