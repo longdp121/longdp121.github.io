@@ -7,32 +7,27 @@ function checkNumber(a, b) {
     let maxNum;
     if (a > b) {
       maxNum = a;
-    } else if (a < b) {
-      maxNum = b;
     } else {
-      return "2 numbers are equal";
+      maxNum = b;
     }
-    return `Max number is ${maxNum}`;
+    return maxNum;
   }
 }
 
 // Bài 2. Viết 1 hàm dùng để tính giai thừa của 1 số. Kiểm tra tham số đầu vào phải là 1 số nguyên >= 0, sau đó tính giai thừa và in ra kết quả.
 
 function factorial(num) {
-  let checkInterger = Number.isInteger(num);
-  if (num < 0 || checkInterger == false) {
+  if (num < 0 || !Number.isInteger(num)) {
     return "Please enter positive interger number only";
   } else {
     if (num == 1 || num == 0) {
-      return `${num}! = 1`;
+      return 1;
     } else {
       let result = 1;
-      let calc = "";
       for (let i = 1; i <= num; i++) {
         result *= i;
-        calc += `* ${i} `;
       }
-      return `${num}! = ${calc.slice(1).trim()} = ${result}`;
+      return result;
     }
   }
 }
@@ -52,11 +47,11 @@ function score(x) {
     let scoreInLetter;
     if (x >= 8.5) {
       scoreInLetter = "A";
-    } else if (x >= 7 && x < 8.5) {
+    } else if (x >= 7) {
       scoreInLetter = "B";
-    } else if (x >= 5.5 && x < 7) {
+    } else if (x >= 5.5) {
       scoreInLetter = "C";
-    } else if (x >= 4 && x < 5.5) {
+    } else if (x >= 4) {
       scoreInLetter = "D";
     } else {
       scoreInLetter = "F";
@@ -87,6 +82,19 @@ function translate(lang) {
       return "أهلا";
     }
   }
+}
+
+function translate2(lang) {
+  if (lang == "ja") {
+    return "こんにちは";
+  } else if (lang == "ko") {
+    return "안녕하세요";
+  } else if (lang == "fr") {
+    return "salut";
+  } else if (lang == "ar") {
+    return "أهلا";
+  }
+  return "xin chao"
 }
 
 // Extra Bài 3. Cho 1 mảng các số bất kỳ. Tạo ra 1 mảng mới chỉ chứa các số chẵn lấy ra từ mảng trên và sắp xếp theo thứ tự giảm dần.
@@ -137,6 +145,28 @@ function checkValid(userObject) {
       } else {
         return "Create account successful";
       }
+    }
+  }
+}
+
+/**
+ * Viet ham n ra man hinh so tu 1 den 100
+ * - Chia het cho 3 mau 'orange'
+ * - Chia het cho 5 mau 'red'
+ * - Chia het cho 3 + 5 mau 'blue
+ * - Con lai mau den
+ */
+
+function printNumber() {
+  for (let i = 1; i <= 100; i++) {
+    if (i % 3 == 0 && i % 5 == 0) {
+      document.write(`<p style="color: blue">${i}</p>`)
+    } else if (i % 3 == 0) {
+      document.write(`<p style="color: orange">${i}</p>`)
+    } else if (i % 5 == 0) {
+      document.write(`<p style="color: red">${i}</p>`)
+    } else {
+      document.write(`<p>${i}</p>`)
     }
   }
 }
