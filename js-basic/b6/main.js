@@ -59,3 +59,20 @@ function filterLongerst(myArray) {
     }
     return longestArr
 }
+
+// Bài 3: Cho 1 mảng các object chứa thông tin sinh viên dạng { name: ‘‘Huy’’, age: 20 }. Viết hàm tính ra số tuổi trung bình của toàn bộ sinh viên.
+
+let studentInfo = [
+    {name: "Huy", age: 20},
+    {name: "abc", age: 30},
+    {name: "cde", age: 40},
+    {name: "ghk", age: 50},
+]
+
+function averageAge(objectArray) {
+    let sumAge = 0;
+    for (i of objectArray) {
+        sumAge += i.age
+    }
+    return sumAge / objectArray.length
+}

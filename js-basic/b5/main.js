@@ -3,7 +3,7 @@
 function autoDate() {
   let date = new Date();
   return [date.getDate(), date.getMonth(), date.getFullYear()];
-  // return [10, 'December', 2055]
+  // return [10, 9, 2055]
 }
 
 function season() {
@@ -23,11 +23,11 @@ function season() {
     "November",
     "December",
   ];
-  if (month >= 2 && month <= 4) {
+  if ([1, 2, 3].includes(month)) {
     seasonName = "Spring";
-  } else if (month >= 5 && month <= 7) {
+  } else if ([4, 5, 6].includes(month)) {
     seasonName = "Summer";
-  } else if (month >= 8 && month <= 10) {
+  } else if ([7, 8, 9].includes(month)) {
     seasonName = "Fall";
   } else {
     seasonName = "Winter";
