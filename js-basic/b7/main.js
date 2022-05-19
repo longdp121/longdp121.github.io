@@ -78,14 +78,15 @@ let studentList = [
   { name: "Hannah Abbott", age: 100 },
   { name: "Sirius Black", age: 100 },
   { name: "Minerva McGonagall", age: 100 },
+  { name: "Voldemod", age: 1000 },
 ];
 
 function filterStudent(myArr) {
   let filteredList = [];
   for (obj of myArr) {
-    if (obj.name[0].toLowerCase() == 'h') {
-      filteredList.push(obj)
+    if (obj.name[0].toLowerCase() == "h") {
+      filteredList.push(obj);
     }
   }
-  return filteredList
+  return filteredList;
 }
