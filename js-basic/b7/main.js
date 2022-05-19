@@ -33,20 +33,59 @@ function checkSymmetry(str) {
 //Bài 3: Cho 1 mảng các object chứa thông tin sinh viên dạng { name: ‘‘Huy’’, age: 20 }. Viết hàm sắp xếp lại mảng trên theo tuổi học viên từ cao đến thấp.
 
 let students = [
-  { name: "Abc Def", age: 26650 },
-  { name: "Ghi Kml", age: 3000000005 },
+  { name: "Abc Def", age: 55 },
+  { name: "Ghi Kml", age: 23 },
   { name: "Njl Opu", age: 80 },
-  { name: "Pmw Qio", age: 1 },
+  { name: "Pmw Qio", age: 13 },
+  { name: "Abc Def", age: 45 },
+  { name: "Ghi Kml", age: 89 },
+  { name: "Njl Opu", age: 12 },
+  { name: "Pmw Qio", age: 21 },
+  { name: "Abc Def", age: 23 },
+  { name: "Ghi Kml", age: 49 },
+  { name: "Njl Opu", age: 67 },
+  { name: "Pmw Qio", age: 19 },
 ];
 
 function sortByAge(myArr) {
-    let sortedList = []
-    for (obj of myArr) {
-        if (obj.age > sortedList[0].age) {
-            sortedList.unshift(obj)
-        } else {
-            sortedList.push(obj.name)
-        }
+  let run = true;
+  let temp = {};
+  while (run) {
+    run = false;
+    for (i = 0; i <= myArr.length - 2; i++) {
+      if (myArr[i].age < myArr[i + 1].age) {
+        temp = myArr[i];
+        myArr[i] = myArr[i + 1];
+        myArr[i + 1] = temp;
+        run = true;
+      }
     }
-    return sortedList
+  }
+  return myArr;
+}
+
+//Bài 4: Cho 1 mảng các object chứa thông tin sinh viên dạng { name: ‘‘Huy’’, age: 20 }. Viết hàm lọc ra những sinh viên nào có tên bắt đầu bằng chữ ‘‘H’’ hoặc ‘‘h’’.
+
+let studentList = [
+  { name: "Harry Potter", age: 100 },
+  { name: "Susan Bones", age: 100 },
+  { name: "Hermione Granger", age: 100 },
+  { name: "Ron Weasley", age: 100 },
+  { name: "Draco Malfoy", age: 100 },
+  { name: "Cedric Diggory", age: 100 },
+  { name: "Cho Chang", age: 100 },
+  { name: "Horace Slughorn", age: 100 },
+  { name: "Hannah Abbott", age: 100 },
+  { name: "Sirius Black", age: 100 },
+  { name: "Minerva McGonagall", age: 100 },
+];
+
+function filterStudent(myArr) {
+  let filteredList = [];
+  for (obj of myArr) {
+    if (obj.name[0].toLowerCase() == 'h') {
+      filteredList.push(obj)
+    }
+  }
+  return filteredList
 }
