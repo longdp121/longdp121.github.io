@@ -67,17 +67,17 @@ function sortByAge(myArr) {
 //Bài 4: Cho 1 mảng các object chứa thông tin sinh viên dạng { name: ‘‘Huy’’, age: 20 }. Viết hàm lọc ra những sinh viên nào có tên bắt đầu bằng chữ ‘‘H’’ hoặc ‘‘h’’.
 
 let studentList = [
-  { name: "Harry Potter", age: 100 },
-  { name: "Susan Bones", age: 100 },
-  { name: "Hermione Granger", age: 100 },
-  { name: "Ron Weasley", age: 100 },
+  { name: "Harry Potter", age: 10 },
+  { name: "Susan Bones", age: 105 },
+  { name: "Hermione Granger", age: 120 },
+  { name: "Ron Weasley", age: 103 },
   { name: "Draco Malfoy", age: 100 },
-  { name: "Cedric Diggory", age: 100 },
+  { name: "Cedric Diggory", age: 170 },
   { name: "Cho Chang", age: 100 },
-  { name: "Horace Slughorn", age: 100 },
-  { name: "Hannah Abbott", age: 100 },
-  { name: "Sirius Black", age: 100 },
-  { name: "Minerva McGonagall", age: 100 },
+  { name: "Horace Slughorn", age: 190 },
+  { name: "Hannah Abbott", age: 106 },
+  { name: "Sirius Black", age: 155 },
+  { name: "Minerva McGonagall", age: 140 },
   { name: "Voldemod", age: 1000 },
 ];
 
