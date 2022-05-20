@@ -7,11 +7,10 @@ let content =
 
 function upperFirstChar(myString) {
   let strs = myString.split(" ");
-  let newStr = [];
   for (let str of strs) {
-    newStr.push(str[0].toUpperCase() + str.slice(1).toLowerCase());
+    str = str[0].toUpperCase() + str.slice(1).toLowerCase()
   }
-  return newStr.join(" ");
+  return strs.join(" ");
 }
 
 //Bài 2: Cho 1 chuỗi, kiểm tra xem chuỗi đó có phải chuỗi đối xứng hay không (đọc xuôi hay ngược đều như nhau, không tính khoảng trắng và không phân biệt hoa thường), kết quả trả về true hoặc false. Ví dụ ‘‘Race car’’ trả về true, ‘‘hello world’’ trả về false.
