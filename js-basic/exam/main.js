@@ -6,13 +6,13 @@ function convertTemp(c) {
 
 //Bài 2: Cho 1 mảng có độ dài lớn hơn 2, chứa các số khác nhau. Hãy viết hàm tìm ra số lớn thứ nhì trong mảng.
 
-let numList = [121, 432, 43, 51, 415, 5454535, 43243];
+let numList = [121, 432, 43, 51, 415, 5454535, 4];
 
-function findSecondBigest(myList) {
+function findSecondBiggest(myList) {
   let run = true;
+  let temp = 0;
   while (run) {
     run = false;
-    let temp = 0;
     for (i = 0; i <= myList.length - 2; i++) {
       if (myList[i] < myList[i + 1]) {
         temp = myList[i];
@@ -46,9 +46,9 @@ let myTarget = "GsHL";
 
 function checkTargetEnd(str, target) {
   if (str.slice(str.length - target.length, str.length) === target) {
-    return true
+    return true;
   }
-  return false
+  return false;
 }
 
 // function checkTargetEnd(str, target) {
