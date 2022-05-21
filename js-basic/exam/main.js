@@ -42,19 +42,26 @@ function findLongest(strs) {
 //Bài 4: Viết hàm có 2 tham số là 2 chuỗi string và target khác rỗng, dùng để kiểm tra chuỗi string có kết thúc bởi chuỗi target hay không. Kết quả trả về là true hoặc false.
 
 let myString = "abcedf---GHL";
-let myTarget = "GHL";
+let myTarget = "GsHL";
 
 function checkTargetEnd(str, target) {
-  let targetIndex = 0;
-  for (i = str.length - target.length; i <= str.length; i++) {
-    if (str[i] != target[targetIndex]) {
-      return false;
-    } else {
-      targetIndex++;
-    }
+  if (str.slice(str.length - target.length, str.length) === target) {
+    return true
   }
-  return true;
+  return false
 }
+
+// function checkTargetEnd(str, target) {
+//   let targetIndex = 0;
+//   for (i = str.length - target.length; i <= str.length; i++) {
+//     if (str[i] != target[targetIndex]) {
+//       return false;
+//     } else {
+//       targetIndex++;
+//     }
+//   }
+//   return true;
+// }
 
 //Bài 5: Cho 1 mảng các chuỗi. Hãy kiểm tra xem trong mảng đó có phần tử nào bị lặp lại hay không (xuất hiện 2 lần trở lên). Kết quả trả về true (nếu lặp) hoặc false (nếu không lặp).
 
