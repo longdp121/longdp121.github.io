@@ -42,7 +42,7 @@ function findLongest(strs) {
 //Bài 4: Viết hàm có 2 tham số là 2 chuỗi string và target khác rỗng, dùng để kiểm tra chuỗi string có kết thúc bởi chuỗi target hay không. Kết quả trả về là true hoặc false.
 
 let myString = "abcedf---GHL";
-let myTarget = "GsHL";
+let myTarget = "GHL";
 
 function checkTargetEnd(str, target) {
   if (str.slice(str.length - target.length, str.length) === target) {
