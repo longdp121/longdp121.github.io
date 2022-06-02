@@ -11,14 +11,19 @@ const fruitList = [
 ];
 
 function renderHtmls(myList) {
-  let html = "<ul>";
+  let html = "";
   for (item of myList) {
     html += `<li>${item}</li>`;
   }
-  return (html += "</ul>");
+  return html;
 }
 
-let htmlAddList = document.body.querySelector(".fruit-list");
+// function renderHtmls(myList) {
+//   for (item of myList) {
+//   }
+// }
+
+let htmlAddList = document.querySelector(".fruit-list");
 
 let content = renderHtmls(fruitList);
 
@@ -36,13 +41,90 @@ imgTag.src = avatarSrc;
 imgTag.className = "avatar";
 imgTag.style = "width: 150px";
 
-htmlAddAvatar.appendChild(imgTag);
+// htmlAddAvatar.appendChild(imgTag);
+htmlAddAvatar.append(imgTag);
+
+// console.log(htmlAddAvatar.children)
 
 //Thay đổi nội dung tất cả thẻ <li> ở vị trí đầu tiên và cuối cùng trong tất cả các thẻ <ul> tương ứng thành first và last
 
 let htmlUls = document.querySelector(".ul-list").children;
 
-for (i = 0; i <= htmlUls.length - 1; i++) {
-  htmlUls[i].firstElementChild.textContent = "First";
-  htmlUls[i].lastElementChild.textContent = "Last";
+// console.log(htmlUls);
+
+for (const ul of htmlUls) {
+  let firstItem = ul.firstElementChild;
+  let lastItem = ul.lastElementChild;
+
+  firstItem.innerText = "First";
+  lastItem.innerText = "Last";
 }
+
+const box = document.querySelector(".box");
+
+// let width = 100;
+// function expand() {
+//   width += 10;
+//   box.style.width = width + "px";
+// }
+
+// setInterval(expand, 1000)
+
+//Tao dong ho
+const clock = document.querySelector(".clock");
+
+function currentTime() {
+  const time = new Date();
+  return time.toLocaleString();
+}
+
+function showTime() {
+  clock.innerText = currentTime();
+}
+
+setInterval(showTime, 1000)
+
+//Render a select menu
+
+const cities = [
+  {
+    id: 1,
+    locate: "vi",
+    name: "Hanoi",
+  },
+  {
+    id: 2,
+    locate: "us",
+    name: "New York",
+  },
+  {
+    id: 3,
+    locate: "JP",
+    name: "Tokyo",
+  },
+  {
+    id: 4,
+    locate: "China",
+    name: "Hello",
+  },
+];
+
+const selectMenu = document.querySelector("select");
+
+function creatOption(item) {
+  const selectTag = document.createElement("option");
+  selectTag.innerText = item.name;
+  selectTag.value = item.locate;
+
+  return selectTag;
+}
+
+function render(myList) {
+  for (let item of myList) {
+    let option = creatOption(item);
+
+    selectMenu.append(option);
+  }
+}
+
+render(cities);
