@@ -60,25 +60,23 @@ const h1 = document.querySelector(".heading");
 h1.innerHTML = "Hello <span style='color: red'>Anh em</span>";
 
 //querrySelectorAll
-document.querySelectorAll("img")
+document.querySelectorAll("img");
 
 //Exam
-const p = document.querySelector(".para")
-let strs = p.innerText.split(" ")
+const p = document.querySelector(".para");
+let strs = p.innerText.split(" ");
 
-let count = 0
+let count = 0;
 for (let i = 0; i < strs.length; i++) {
-    const str = strs[i]
-    if (str.length >= 8) {
-        count ++;
-        strs[i] = `<b>${str}</b>`;
-    }
+  if (strs[i].length >= 8) {
+    count++;
+    strs[i] = `<b>${strs[i]}</b>`;
+  }
 }
 
 let newContent = strs.join(" ");
 
-console.log(newContent)
+console.log(newContent);
 
-p.innerHTML = newContent
-document.title = `There are ${count} words logher than 8`
-
+p.innerHTML = newContent;
+document.title = `There are ${count} words logher than 8`;
