@@ -8,14 +8,16 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <button onclick="clickButton()">
-      Click
-    </button>
-    <select name="provinde" id="provinde" onchange="listenInputChange(event)">
-        <option value="haiphong">Hai Phong</option>
-        <option value="hanoi">Hanoi</option>
+    <label for="cities">Chon thanh pho: </label>
+    <select name="cities" id="cities"></select>
+    <label for="districs">Chon quan/huyen: </label>
+    <select name="districs" id="districs">
     </select>
-    <select name="distric" id="distric"></select>
+    <label for="wards">Chon phuong/xa: </label>
+    <select name="wards" id="wards">
+    </select>
+    <button type="button" id="search-btn">Print</button>
+    <p id="result"></p>
     <script src="./main.js"></script>
   </body>
 </html>
