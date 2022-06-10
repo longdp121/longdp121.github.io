@@ -31,6 +31,7 @@ for (let city in cities) {
 citiesSelectTag.onchange = function (event) {
   let selectedCity = event.target.value;
   districsSelectTag.innerHTML = "";
+  wardsSelectTag.innerHTML = "";
   for (let distric in cities[selectedCity]) {
     let districOptionTag = document.createElement("option");
     districOptionTag.innerText = distric;
@@ -57,6 +58,6 @@ searchBtn.onclick = function () {
   if (citiValue != "" && districValue != "" && wardValue != "") {
     resultTag.innerText = `Thanh pho: ${citiValue}. Quan: ${districValue}. Phuong: ${wardValue}`;
   } else {
-      
+
   }
 };
