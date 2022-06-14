@@ -5,20 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
   </head>
 
   <body>
     <div id="input">
-      <label for="">Điểm</label>
+      <label for="score">Điểm</label>
       <input type="number" name="score" id="score" />
       <button id="btn">Click</button>
     </div>
-    
+
     <div>
       <label for="result">Result</label>
       <div id="result"></div>
     </div>
-    <div class="result"></div>
+    
+    <div>
+      <table id="table-price">
+        <tr>
+          <th>Product ID</th>
+          <th>Product Name</th>
+          <th>Product Price</th>
+          <th>Quantity</th>
+        </tr>
+      </table>
+    </div>
+
+    <button id="sum-btn">Sum total</button>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./main.js"></script>
   </body>
