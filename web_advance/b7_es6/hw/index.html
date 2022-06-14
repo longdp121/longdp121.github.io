@@ -7,41 +7,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tim viec lam | CareerBuilder.vn</title>
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./font/themify-icons/themify-icons.css">
 </head>
 
 <body>
-    <section class="search-btns-inputs">
-        <div class="inputs">
-            <form action="" class="default-filters">
-                <label for="search-content"></label>
-                <input type="text" name="search-content" id="search-content"
-                    placeholder="Chức danh, Kỹ năng, Tên công ty" />
-
-                <div class="profession-filters filters-style">
-                    <div class="selectBox">
-                        <select>
-                            <option>Tất cả ngành nghề</option>
-                        </select>
-                        <div class="overSelect"></div>
+    <div id="wrap">
+        <header id="header-container">
+            <div class="main-nav-bar row between">
+                <div class="left-nav-bar row">
+                    <div class="logo center">
+                        <a href="#">
+                            <img src="./img/logo.png" alt="logo">
+                        </a>
                     </div>
-                    <div id="professions" class="checkboxes"></div>
-                </div>
-
-                <div class="cities-filters filters-style">
-                    <div class="selectBox">
-                        <select>
-                            <option>Tất cả địa điểm</option>
-                        </select>
-                        <div class="overSelect"></div>
+                    <div class="main-menu center">
+                        <ul class="menu row between">
+                            <li><a href="#" title="Tìm Việc Làm">Tìm Việc Làm</a></li>
+                            <li><a href="#" title="CV Hay">CV Hay</a></li>
+                            <li><a href="#" title="VietnamSalary">VietnamSalary</a></li>
+                            <li><a href="#" title="CareerMap">CareerMap</a></li>
+                            <li><a href="#" title="Cẩm Nang">Cẩm Nang</a></li>
+                            <li><a href="#" title="Tính Lương">Tính Lương</a></li>
+                        </ul>
                     </div>
-                    <div id="cities" class="checkboxes"></div>
                 </div>
-                
-                <button id="submit-btn">Submit</button>
-            </form>
-        </div>
-    </section>
+                <div class="right-nav-bar row center">
+                    <div class="noti-btn">
+                        <a href="#"><i class="ti-bell"></i></a>
+                    </div>
+                    <div class="login-btn">
+                        <a href="#"><i class="ti-user"> Đăng nhập</i></a>
+                    </div>
+                    <div class="signup-btn">
+                        <a href="#">Đăng ký</a>
+                    </div>
+                    <div class="lang-btn">
+                        <a href="#">VI <i class="ti-angle-down"></i></a>
+                    </div>
+                    <div class="companies-btn">
+                        <a href="#">
+                            <p class="font-16 white bold">
+                                Dành cho nhà tuyển dụng <i class="ti-angle-down"></i>
+                            </p>
+                            <p class="gray">
+                                Đăng tuyển, Tìm ứng viên
+                            </p>
+                            
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="default-search center between">
+                <div class="search-tool-bar row between">
+                    <div class="search-inputs row">
+                        <div id="search-input">
+                            <label for="search-conent"></label>
+                            <input type="text" name="search-conent" id="search-conent" placeholder="Chức danh, Kỹ năng, Tên công ty">
+                        </div>
 
+                        <div id="profestion-filters">
+                            <label for="profestion-inputs"></label>
+                            <input type="text" name="profestion-inputs" id="profestion-inputs">
+                            <div class="overlay">
+                                <div>
+                                    <input type="checkbox" name="" id=""><br>
+                                    <input type="checkbox" name="" id="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="location-filters">
+                            <label for=""></label>
+                            <input type="text" name="location-inputs" id="location-inputs">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="seach-btn">
+                            <a href="#"><i class="ti-search"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="search-functions row">
+                        <div class="filter-btn">
+                            <a href="#"><i class="ti-filter"></i></a>
+                        </div>
+                        <div class="wfh-btn row">
+                            <span>Work from home</span>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label>
+                        </div>
+                        <div class="view-mode-btns row">
+                            <div class="view-mode-1">
+                                <a href="#"><i class="ti-menu-alt"></i></a>
+                            </div>
+                            <div class="view-mode-2">
+                                <a href="#"><i class="ti-menu"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
     <script src="./main.js"></script>
 </body>
 

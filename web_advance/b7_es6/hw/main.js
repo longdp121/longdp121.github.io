@@ -1,29 +1,13 @@
-const professionFilter = [
-    "Nông Nghiệp",
-    "Khai Khoáng",
-    "Tài Chính",
-    "Du Lịch",
-    "Công Nghệ Thông Tin",
-    "Y Dược",
-    "Xây Dựng"
-]
+let profestionOptions = document.getElementById("profestion-filters")
 
-const locations = [
-  "Hà Nội",
-  "TP Hồ Chí Minh",
-  "Đà Nẵng",
-  "Hải Phòng",
-  "Nam Đình",
-  "Phú Quốc"
-]
+profestionOptions.onclick = function() {
+    let a = profestionOptions.getElementsByClassName("overlay")[0];
+    a.style.display = "block"
+}
 
-const inputs = document.querySelectorAll("input")
-const checkboxesTags = document.getElementById("professions")
-
-//input style
-inputs.forEach(styleInputs)
-
-function styleInputs(input) {
-    input.setAttribute("size", input.getAttribute("placeholder").length)
+profestionOptions.onblur = function() {
+    let a = profestionOptions.getElementsByClassName("overlay")[0];
+    a.style.display = "none"
+    console.log(10)
 }
 
