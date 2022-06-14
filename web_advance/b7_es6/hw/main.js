@@ -1,13 +1,9 @@
 let profestionOptions = document.getElementById("profestion-filters")
 
-profestionOptions.onclick = function() {
-    let a = profestionOptions.getElementsByClassName("overlay")[0];
-    a.style.display = "block"
-}
-
-profestionOptions.onblur = function() {
-    let a = profestionOptions.getElementsByClassName("overlay")[0];
-    a.style.display = "none"
+profestionOptions.onfocus = function() {
     console.log(10)
 }
 
+// profestionOptions.onclick = function() {
+//     console.log(10)
+// }
