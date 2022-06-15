@@ -10,43 +10,42 @@ btn.on("click", function () {
     resultTag.html(`<p style="color: yellow">Dat</p>`);
   } else if (score < 4) {
     resultTag.html(`<p style="color: red">Khong dat</p>`);
+  } else {
+    resultTag.text("Invalid");
   }
 });
-
 
 const products = [
   { id: 1, name: "p1", price: 50, qty: 1 },
   { id: 2, name: "p2", price: 60, qty: 2 },
   { id: 3, name: "p3", price: 35, qty: 3 },
-]
+];
 
 let sum = products.reduce(function (prev, cur) {
   return prev + cur.price;
-}, 0)
+}, 0);
 
 // console.log(sum)
 
 let tablePrice = $("#table-price");
-let sumBtn = $("#sum-btn")
+let sumBtn = $("#sum-btn");
 
 products.forEach(function (item) {
   let trTag = document.createElement("tr");
   for (let i in item) {
-    let tdTag = document.createElement("td")
+    let tdTag = document.createElement("td");
     tdTag.innerText = item[i];
-    trTag.append(tdTag)
+    trTag.append(tdTag);
   }
-  tablePrice.append(trTag)
-})
+  tablePrice.append(trTag);
+});
 
 sumBtn.on("click", function () {
   if ($("tr").length === products.length + 1) {
     let sum = products.reduce(function (total, product) {
-      return total + product.price * product.qty
-    }, 0)
-    tablePrice.append(`<tr><td>${sum}</td></tr>`)
+      return total + product.price * product.qty;
+    }, 0);
+    tablePrice.append(`<tr><td>${sum}</td></tr>`);
   } else {
-    
   }
-})
-
+});
