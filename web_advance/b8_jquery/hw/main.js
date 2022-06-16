@@ -68,68 +68,79 @@ var jobs = [
 
 let resultTable = $("#result-table");
 let searchInput = $("#search-input");
-let searchBtn = $("#search-btn")
-let showAdvanceSearchBtn = $("#advance-search-option")
-let advanceSearchForm = $("#advance-search-form")
-let advanceSearchBtn = $("#advance-search-btn")
-let salaryRangeList = $("input[type='radio']")
+let searchBtn = $("#search-btn");
+let showAdvanceSearchBtn = $("#advance-search-option");
+let advanceSearchForm = $("#advance-search-form");
+let advanceSearchBtn = $("#advance-search-btn");
+let salaryRangeList = $("input[type='radio']");
+let levelInput = $("#level");
+let statusInput = $("#status");
+let tempSearchResult = [];
 
 //Render data
 function renderJobsTableHeader(myList) {
-    let trTag = "<tr>"
+  let trTag = "<tr>";
   for (let jobElement in myList[0]) {
-    trTag += `<th>${jobElement}</th>`
+    trTag += `<th>${jobElement}</th>`;
   }
-  trTag += "</tr>"
-  resultTable.append(trTag)
+  trTag += "</tr>";
+  resultTable.append(trTag);
 }
 
 renderJobsTableHeader(jobs);
 
 function renderJobsTableContent(myList) {
-    for (let job of myList) {
-        let trTag = "<tr>";
-        for (let jobdetail in job) {
-            trTag += `<th>${job[jobdetail]}</th>`
-        }
-        trTag += "</tr>"
-        resultTable.append(trTag)
+  for (let job of myList) {
+    let trTag = "<tr>";
+    for (let jobdetail in job) {
+      trTag += `<th>${job[jobdetail]}</th>`;
     }
+    trTag += "</tr>";
+    resultTable.append(trTag);
+  }
 }
 
-renderJobsTableContent(jobs)
+renderJobsTableContent(jobs);
 
 //Basic search
-searchBtn.on("click", function() {
-    let tempSearchResult = [];
-    jobs.forEach(function(item) {
-        if (item["jobName"].toLowerCase().includes(searchInput.val().toLowerCase())) {
-            tempSearchResult.push(item)
-        }
-    })
-    if (tempSearchResult.length > 0) {
-      resultTable.html("")
-      renderJobsTableHeader(tempSearchResult)
-      renderJobsTableContent(tempSearchResult)
-    } else {
-      resultTable.html("<p>Job not found</p>")
+searchBtn.on("click", function () {
+  tempSearchResult = [];
+  jobs.forEach(function (item) {
+    if (
+      item["jobName"].toLowerCase().includes(searchInput.val().toLowerCase())
+    ) {
+      tempSearchResult.push(item);
     }
-    
-})
+  });
+  if (tempSearchResult.length > 0) {
+    resultTable.html("");
+    renderJobsTableHeader(tempSearchResult);
+    renderJobsTableContent(tempSearchResult);
+  } else {
+    resultTable.html("<p>Job not found</p>");
+  }
+});
 
 //Advance search
-showAdvanceSearchBtn.on("click", function() {
-    if (advanceSearchForm.css("display") === "none") {
-        advanceSearchForm.css("display", "block")
-    } else {
-        advanceSearchForm.css("display", "none")
-    }
-})
+showAdvanceSearchBtn.on("click", function () {
+  if (advanceSearchForm.css("display") === "none") {
+    advanceSearchForm.css("display", "block");
+  } else {
+    advanceSearchForm.css("display", "none");
+  }
+});
 
 advanceSearchBtn.on("click", function() {
-  for (let salaryRange of salaryRangeList) {
-    if (salaryRange.checked) {
-      console.log(salaryRange.value)
+  if (tempSearchResult.length > 0) {
+    for (let salaryRange of salaryRangeList) {
+      if (salaryRange.checked) {
+        if (salaryRange.value === "young") {
+          tempSearchResult.forEach(function(job) {
+            let salary = job["salary"].replace(/./g, "")
+            console.log(salary) 
+          })
+        }
+      }
     }
   }
 })
