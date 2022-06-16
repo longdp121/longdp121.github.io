@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <h1>Bài 3</h1>
+
+  <div id="basic-search-form">
+    <label for="search-input">bạn đang tìm gì: </label>
+    <input type="text" name="search" id="search-input" />
+    <button type="submit" id="search-btn">Tìm kiếm!</button>
+  </div>
+
+  <br />
+
+  <button type="submit" id="advance-search-option">Tìm kiếm nâng cao</button>
+
+  <div id="advance-search-form">
+    <p>Tìm kiếm nâng cao:</p>
+    <table id="salary">
+      <tbody>
+        <tr>
+          <td>Lương:</td>
+          <td id="range-list">
+            <label>
+              <input type="radio" name="salary" value="young" /> >18tr
+            </label>
+            <label>
+              <input type="radio" name="salary" value="mature" />18-30tr
+            </label>
+            <label>
+              <input type="radio" name="salary" value="senior" /> >50tr
+            </label>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Điều kiện đi kèm:</td>
+          <td>
+            <select name="level" id="level">
+              <option value="employee">employee</option>
+              <option value="student">student</option>
+            </select>
+            <select name="status" id="status">
+              <option value="nhan-vien-chinh-thuc">
+                nhan vien chinh thuc
+              </option>
+              <option value="thoi vu tu do">thoi vu tu do</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="submit" id="advance-search-btn">Tìm kiếm!</button>
+  </div>
+  <hr />
+  <div id="result-table"></div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="./main.js"></script>
+</body>
+
+</html>

@@ -4,6 +4,7 @@ let resultTag = $("#result");
 
 btn.on("click", function () {
   let score = inputScore.val();
+  console.log(score)
   if (score >= 6 && score <= 8) {
     resultTag.html(`<p style="color: green">Gioi</p>`);
   } else if (score >= 4 && score < 6) {
