@@ -12,7 +12,7 @@ var jobs = [
   {
     jobName: "Lập trình viên",
     company: "Zing",
-    salary: "6.000.000d",
+    salary: "6.000.000.000d",
     city: "Ho Chi Minh",
     level: "student",
     time: "3-days",
@@ -72,7 +72,7 @@ let searchBtn = $("#search-btn");
 let showAdvanceSearchBtn = $("#advance-search-option");
 let advanceSearchForm = $("#advance-search-form");
 let advanceSearchBtn = $("#advance-search-btn");
-let salaryRangeList = $("input[type='radio']");
+
 let levelInput = $("#level");
 let statusInput = $("#status");
 let tempSearchResult = [];
@@ -131,16 +131,9 @@ showAdvanceSearchBtn.on("click", function () {
 });
 
 advanceSearchBtn.on("click", function() {
-  if (tempSearchResult.length > 0) {
-    for (let salaryRange of salaryRangeList) {
-      if (salaryRange.checked) {
-        if (salaryRange.value === "young") {
-          tempSearchResult.forEach(function(job) {
-            let salary = job["salary"].replace(/./g, "")
-            console.log(salary) 
-          })
-        }
-      }
-    }
-  }
+  let salaryRangeList = $("input[name='salary']:checked").val();
+
+  console.log(salaryRangeList)
 })
+
+

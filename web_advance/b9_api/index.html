@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <button type="button" id="add-btn">Add new</button>
+    <br><br>
+    <div id="container">
+        <div id="table-content">
+            <table id="table">
+                <tr>
+                    <th>name</th>
+                    <th>des</th>
+                    <th>price</th>
+                    <th>id</th>
+                    <th>action</th>
+                </tr>
+            </table>
+        </div>
+        
+        <div id="add-item-table">
+            <label for="new-name">New name: </label>
+            <input type="text" name="new-name" id="new-name-input"><br>
+            <label for="new-details">New details: </label>
+            <input type="text" name="new-details" id="new-details-input"><br>
+            <label for="new-price">New price: </label>
+            <input type="number" name="new-price" id="new-price-input"><br>
+            <button type="button" id="save-btn">Save</button>
+            <button type="button" id="cancel-btn">Cancel</button>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
