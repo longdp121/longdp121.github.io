@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5px;
+}
+
+#advance-search {
+    display: none;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 75%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./font/themify-icons/themify-icons.css">
+</head>
+
+<body>
+    <div id="basic-search" class="flex">
+        <input type="text" name="search-content-input" id="search-content-input"
+            placeholder="Chức danh, Kỹ Năng, Tên Công Ty" value="">
+        <div id="pro-search-form">
+            <input type="text" name="search-pro-input" id="search-pro-input" placeholder="Tất cả ngành nghề" value="">
+            <div id="pro-select"></div>
+        </div>
+        <div id="location-search-form">
+            <input type="text" name="search-location-input" id="search-location-input" placeholder="Tất cả địa điểm"
+                value="">
+            <div id="location-select"></div>
+        </div>
+        <button type="button" id="search-btn"><i class="ti-search"></i></button>
+        <button type="button" id="filter-btn"><i class="ti-filter"></i></button>
+        <label for="wfh-checkbox">Work from home</label>
+        <input type="checkbox" name="wfh-checkbox" id="wfh-checkbox">
+    </div>
+
+    <div id="advance-search" class="flex">
+        <div class="flex-col">
+            <label for="salary-range">Mức lương</label>
+            <select name="salary-range" id="salary-range">
+                <option value="">Tất cả</option>
+            </select>
+        </div>
+        <div class="flex-col">
+            <label for="job-position">Cấp bậc</label>
+            <select name="job-position" id="job-position">
+                <option value="">Tất cả</option>
+            </select>
+        </div>
+        <div class="flex-col">
+            <label for="date-range">Đăng trong vòng</label>
+            <select name="date-range" id="date-range">
+                <option value="">Tất cả</option>
+                <option value="3">3 Ngày trước</option>
+                <option value="7">1 Tuần trước</option>
+                <option value="14">2 Tuần trước</option>
+                <option value="30">1 Tháng trước</option>
+            </select>
+        </div>
+        <div class="flex-col">
+            <label for="job-status">Hình thức làm việc</label>
+            <select name="job-status" id="job-status">
+                <option value="">Tất cả</option>
+            </select>
+        </div>
+        <div class="flex-col">
+            <label for="">Phúc lợi mong muốn</label>
+            <input type="text" name="offer" id="offer" placeholder="Tất cả">
+            <div id="offer-filter"></div>
+        </div>
+        <button type="button" id="advance-search-btn">Tìm ngay</button>
+        <button type="button" id="del-filter-btn">Xóa bộ lọc</button>
+        <button type="button" id="hide-advance-search-btn"><i class="ti-close"></i></button>
+    </div>
+
+    <table></table>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
