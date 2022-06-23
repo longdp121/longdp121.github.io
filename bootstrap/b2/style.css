@@ -11,11 +11,8 @@
     border: solid 1px red;
 }
 
-.tall-div-style {
-    height: 200px;
-    background-color: aqua;
-    padding: 15px;
-    border: solid 1px red;
+.tall {
+    height: 500px;
 }
 
 .btn {
