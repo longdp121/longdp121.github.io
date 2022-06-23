@@ -7,13 +7,15 @@
 .div-style {
     height: 100px;
     background-color: aqua;
-    margin: 15px 15px;
+    padding: 15px;
+    border: solid 1px red;
 }
 
 .tall-div-style {
     height: 200px;
     background-color: aqua;
-    margin: 15px 15px;
+    padding: 15px;
+    border: solid 1px red;
 }
 
 .btn {
