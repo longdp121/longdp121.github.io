@@ -1,17 +1,87 @@
-img {
-    max-width: 100%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.col,
-.col-2,
-.col-4,
-.col-sm-3,
-.col-6 {
-    border: none;
-    margin: 3px 0 6px 0;
-    padding: 0 6px 0 6px;
+.navbar-brand-logo {
+    max-height: 58px;
 }
 
-.row {
-    text-align: center;
+div.container-fluid.main {
+    padding: 0;
+    height: auto;
+}
+
+nav.navbar {
+    padding: 8px 50px;
+}
+
+form.buy-now-btn {
+    margin-left: 50px;
+}
+
+.navbar-text-style {
+    color: #1D1D24;
+    font-size: 16px;
+    padding: 20px 0;
+    margin: 0 15px;
+}
+
+.carousel-title-text {
+   color: #fff;
+   font-size: 100px;
+   font-weight: 900;
+   line-height: 130px;
+}
+
+.carousel-content-text {
+    color: #c6c9d8;
+    font-size: 24px;
+    line-height: 40px;
+    font-weight: 300;
+}
+
+.intro-content {
+    padding: 19px 0;
+}
+
+.intro-content-icon {
+    font-size: 54px;
+    color: #ef0963;
+}
+
+.intro-content-title {
+    color: #1f1f25;
+    line-height: 1.4074;
+    margin: 19px 0;
+}
+
+.intro-content-text {
+    font-size: 18px;
+    line-height: 30px;
+    color: #1D1D24BF;
+    margin: 0;
+}
+
+.intro-item {
+    border-radius: 10px;
+}
+
+.intro-item a {
+    text-decoration: none;
+}
+
+.intro-item:hover p,
+.intro-item:hover i,
+.intro-item:hover h3 {
+    color: white;
+}
+
+.intro-item:hover {
+    background-color: #ef0963;
+}
+
+.intro-item-box {
+    padding: 60px 45px;
 }

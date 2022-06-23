@@ -1,46 +1,133 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Bootstap 5 - B1</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS v5.2.0-beta1 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
+<head>
+  <title>Corporate Business || React Multipurpose Template</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="shortcut icon" href="./img/logo-all-dark.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="./font/themify-icons/themify-icons.css">
+</head>
 
-  </head>
-  <body>
-      <p>My first Bootstrap</p>
-      <div class="container">
-        <div class="row">
-          <div class="col-6 col-md-3">
-            <a href="#">
-              <img src="./img/img.jpg" alt="basic img">
-            </a>
-          </div>
-          <div class="col-6 col-md-3">
-            <a href="#">
-              <img src="./img/img.jpg" alt="basic img">
-            </a>
-          </div>
-          <div class="col-6 col-md-3">
-            <a href="#">
-              <img src="./img/img.jpg" alt="basic img">
-            </a>
-          </div>
-          <div class="col-6 col-md-3">
-            <a href="#">
-              <img src="./img/img.jpg" alt="basic img">
-            </a>
+<body>
+  <div class="container-fluid main">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img class="img-fluid navbar-brand-logo" src="./img/logo-all-dark.png" alt="logo" />
+        </a>
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link navbar-text-style" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navbar-text-style" href="#">Service</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navbar-text-style" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navbar-text-style" href="#">Pages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navbar-text-style" href="#">Blocks</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link navbar-text-style" href="#">Contact</a>
+            </li>
+          </ul>
+          <form class="d-flex my-2 my-lg-0 buy-now-btn">
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="button">
+              Buy Now
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
+        <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item position-relative active">
+          <img src="./img/slide1.jpg" alt="First slide">
+          <div class="carousel-caption d-flex flex-column text-end position-absolute bottom-50">
+            <h1 class="carousel-title-text">BUSINESS.</h1>
+            <p class="carousel-content-text">There are many variations of passages but the majority<br>have suffered alteration.</p>
+            <div>
+              <button type="button" class="btn btn-danger">Contact us</button>
+            </div>
           </div>
         </div>
-
+        <div class="carousel-item position-relative">
+          <img src="./img/slide2.jpg" alt="Second slide">
+          <div class="carousel-caption d-flex flex-column text-start position-absolute bottom-50">
+            <h1 class="carousel-title-text">AGENCY.</h1>
+            <p class="carousel-content-text">There are many variations of passages but the majority<br>have suffered alteration.</p>
+            <div>
+              <button type="button" class="btn btn-danger">Contact us</button>
+            </div>
+          </div>
+        </div>
       </div>
-    <!-- Bootstrap JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="container intro-content">
+      <div class="row">
+        <div class="col intro-item">
+          <a href="#">
+            <div class="intro-item-box d-flex flex-column text-center">
+              <i class="ti-desktop intro-content-icon"></i>
+              <h3 class="intro-content-title">Business Stratagy</h3>
+              <p class="intro-content-text">I throw myself down among the tall grass by the stream as I lie close to the earth.</p>
+            </div>
+          </a>
+        </div>
+        <div class="col intro-item">
+          <a href="#">
+            <div class="intro-item-box d-flex flex-column text-center">
+              <i class="ti-layers-alt intro-content-icon"></i>
+              <h3 class="intro-content-title">Website Development</h3>
+              <p class="intro-content-text">I throw myself down among the tall grass by the stream as I lie close to the earth.</p>
+            </div>
+          </a>
+        </div>
+        <div class="col intro-item">
+          <a href="#">
+            <div class="intro-item-box d-flex flex-column text-center">
+              <i class="ti-user intro-content-icon"></i>
+              <h3 class="intro-content-title">Marketing & Reporting</h3>
+              <p class="intro-content-text">I throw myself down among the tall grass by the stream as I lie close to the earth.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
