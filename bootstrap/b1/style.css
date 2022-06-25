@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.main {
+  height: 5000px;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -53,18 +57,51 @@ form.buy-now-btn {
   margin: 0 15px;
 }
 
-.carousel-title-text {
-  color: #fff;
-  font-size: 100px;
-  font-weight: 900;
-  line-height: 130px;
+@media only screen and (max-width: 767) {
+  .carousel-title-text {
+    color: #fff;
+    font-size: 36px;
+    line-height: 64px;
+  }
+  .carousel-content-text {
+    font-size: 16px;
+    color: #c6c9d8;
+  }
+  .count-number-size {
+    font-size: 45px !important;
+  }
+  .count-number-content-size {
+    font-size: 16px !important;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .carousel-title-text {
+    color: #fff;
+    font-size: 60px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .carousel-title-text {
+    color: #fff;
+    font-size: 72px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .carousel-title-text {
+    color: #fff;
+    font-size: 100px;
+  }
+  .carousel-content-text {
+    color: #c6c9d8;
+    font-size: 24px;
+  }
 }
 
 .carousel-content-text {
   color: #c6c9d8;
-  font-size: 24px;
-  line-height: 40px;
-  font-weight: 300;
 }
 
 .intro-content {
@@ -106,4 +143,10 @@ form.buy-now-btn {
 
 .intro-item-box {
   padding: 60px 45px;
+}
+
+.bg-img {
+  background-image: url("./img/long-office-img.jpg");
+  height: 511px;
+  background-repeat: no-repeat;
 }
