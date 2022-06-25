@@ -4,6 +4,31 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+.test {
+  height: 1000px;
+}
+
+.fs-15 {
+  font-size: 15px;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+.fs-72 {
+  font-size: 72px;
+}
+
 .navbar-brand-logo {
   max-height: 58px;
 }
@@ -66,10 +91,7 @@ form.buy-now-btn {
 
 .intro-item {
   border-radius: 10px;
-}
-
-.intro-item a {
-  text-decoration: none;
+  margin: 0 15px;
 }
 
 .intro-item:hover p,
