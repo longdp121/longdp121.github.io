@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-.main {
-  height: 5000px;
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -17,16 +13,16 @@ img {
   max-width: 100%;
 }
 
-.test {
-  height: 1000px;
-}
-
 .fs-15 {
   font-size: 15px;
 }
 
 .fs-18 {
   font-size: 18px;
+}
+
+.fs-60 {
+  font-size: 60px;
 }
 
 .fs-72 {
@@ -55,6 +51,26 @@ form.buy-now-btn {
   font-size: 16px;
   padding: 20px 0;
   margin: 0 15px;
+}
+
+.no-list-style {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.check-list-style {
+  padding-right: 5px;
+  color: #f9004d;
+}
+
+.list-item-style {
+  color: #7e7e7e;
+  margin-bottom: 10px;
+}
+
+.play-btn-style {
+  font-size: 60px;
+  color: #f9004d;
 }
 
 @media only screen and (max-width: 767) {
