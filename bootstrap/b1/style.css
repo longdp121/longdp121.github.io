@@ -73,6 +73,10 @@ form.buy-now-btn {
   color: #f9004d;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 767) {
   .carousel-title-text {
     color: #fff;
@@ -88,6 +92,14 @@ form.buy-now-btn {
   }
   .count-number-content-size {
     font-size: 16px !important;
+  }
+  .brand-box-height {
+    height: 140px;
+    padding: 0;
+  }
+  .brand-img-size {
+    width: 100px !important;
+    height: auto;
   }
 }
 
@@ -113,6 +125,14 @@ form.buy-now-btn {
   .carousel-content-text {
     color: #c6c9d8;
     font-size: 24px;
+  }
+  .brand-box-height {
+    height: 214px;
+    padding: 0;
+  }
+  .brand-img-size {
+    max-width: 150px;
+    max-height: 110px;
   }
 }
 
@@ -165,4 +185,21 @@ form.buy-now-btn {
   background-image: url("./img/long-office-img.jpg");
   height: 511px;
   background-repeat: no-repeat;
+}
+
+div.brand-box-height:hover {
+  background-color: #ef0963;
+}
+
+div.brand-box-height:hover .filter {
+    -webkit-filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
+}
+
+.table {
+  display: table;
+}
+
+.center-content {
+ margin: auto;
 }
