@@ -52,7 +52,7 @@ function renderModalContent(productList) {
         <div class="col-6">
           <div class="row">
             <div class="col-6 product-img">
-              <img src="${product.img}" alt="product-img">
+              <img src=${product.img} alt="product-img">
             </div>
             <div class="col-6 product-info d-flex flex-column text-start">
               <h6>${product.name}</h6>
