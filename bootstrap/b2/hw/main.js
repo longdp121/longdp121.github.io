@@ -114,14 +114,14 @@ function changeQtyValue(event) {
     renderCartBadget(totalQty)
 }
 
-function removeProduct() {
-    let removeProductId = event.target.id.slice(11);
-    let updateCartProducts = cartProducts.filter(function (product) {
-        return product.id != removeProductId;
-    });
+// function removeProduct() {
+//     let removeProductId = event.target.id.slice(11);
+//     let updateCartProducts = cartProducts.filter(function (product) {
+//         return product.id != removeProductId;
+//     });
 
-    cartProducts = updateCartProducts;
-    modalCheckoutContent.innerHTML = "";
-}
+//     cartProducts = updateCartProducts;
+//     modalCheckoutContent.innerHTML = "";
+// }
 
 console.log(cartProducts);
