@@ -1,4 +1,4 @@
-var cartProducts = [
+let cartProducts = [
     {
         id: 1,
         img: "./img/image_1.png",
@@ -30,12 +30,11 @@ let cart = document.getElementById("cart");
 let htmls = "";
 
 function updateData(myList, id, value) {
-  myList.forEach(function(item) {
-    if (item.id === id) {
-      item.qty = value;
-      // console.log(item.qty);
+  for (obj of myList) {
+    if (obj.id == id) {
+      obj.qty = value;
     }
-  })
+  }
 }
 
 // updateData(cartProducts, 3, 1000)
@@ -43,7 +42,9 @@ function updateData(myList, id, value) {
 // console.log(cartProducts)
 
 function renderCartBadget(num) {
-    if (num !== 0) {
+  cart.innerHTML = '<i class="ti-shopping-cart"></i>';
+    if (num > 0) {
+      console.log("num or totalQty: ", num)
         cart.innerHTML = `
         <i class="ti-shopping-cart"></i>
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -84,7 +85,7 @@ function renderModalContent(productList) {
             </div>
             <div class="col-4 d-flex justify-content-start px-o">
               <input class="width50" type="number" name="product_quantity" id="product_quantity_${product.id
-            }" min="1" value="${product.qty}" onChange="changeQtyValue(event)">
+            }" min="0" value="${product.qty}" onChange="changeQtyValue(event)">
             </div>
             <div class="col-4 text-start px-0">
               <p><b>$</b><b id="product_total_price_${product.id}">${product.price * product.qty
@@ -126,10 +127,9 @@ function changeQtyValue(event) {
         );
     });
     totalFinalPrice.innerText = totalPrice;
-    renderCartBadget(totalQty)
-    // console.log("1",cartProducts)
-    // updateData(cartProducts, changedId, 1000)
-    // console.log("2", cartProducts)
+    renderCartBadget(totalQty);
+    updateData(cartProducts, changedId, updateQtyValue)
+    console.log(cartProducts);
     
 }
 
@@ -142,5 +142,3 @@ function changeQtyValue(event) {
 //     cartProducts = updateCartProducts;
 //     modalCheckoutContent.innerHTML = "";
 // }
-
-// console.log(cartProducts);

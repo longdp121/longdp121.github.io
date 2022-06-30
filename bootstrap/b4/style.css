@@ -1,0 +1,32 @@
+@font-face {
+    font-family: myfont;
+    src: url("./fontTaviraj/Taviraj-SemiBold.ttf");
+}
+
+@media only screen and (max-width: 1200px) {
+    html, body {
+        font-size: 11px;
+    }
+}
+
+body {
+    height: 10000px;
+}
+
+.nav-tabs {
+    border: none;
+    --bs-nav-tabs-border-width: 0;
+}
+
+.nav-tabs .nav-link.active {
+    color:  #D84727;
+    font-family: myfont;
+}
+
+.nav-tabs .nav-link {
+    color:#999999;
+    font-family: myfont;
+}
+button.nav-link {
+    border-bottom: 10px solid black;
+}
