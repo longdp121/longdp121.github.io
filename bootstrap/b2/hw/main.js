@@ -29,6 +29,19 @@ let totalFinalPrice = document.getElementById("total-price");
 let cart = document.getElementById("cart");
 let htmls = "";
 
+function updateData(myList, id, value) {
+  myList.forEach(function(item) {
+    if (item.id === id) {
+      item.qty = value;
+      // console.log(item.qty);
+    }
+  })
+}
+
+// updateData(cartProducts, 3, 1000)
+
+// console.log(cartProducts)
+
 function renderCartBadget(num) {
     if (num !== 0) {
         cart.innerHTML = `
@@ -91,7 +104,9 @@ renderModalContent(cartProducts);
 
 function changeQtyValue(event) {
     let updateQtyValue = event.target.value;
+    console.log("value", updateQtyValue)
     let changedId = event.target.id.slice(17);
+    console.log(changedId);
     let productPrice = parseFloat(
         document.getElementById(`product_price_${changedId}`).innerText
     );
@@ -112,6 +127,10 @@ function changeQtyValue(event) {
     });
     totalFinalPrice.innerText = totalPrice;
     renderCartBadget(totalQty)
+    // console.log("1",cartProducts)
+    // updateData(cartProducts, changedId, 1000)
+    // console.log("2", cartProducts)
+    
 }
 
 // function removeProduct() {
@@ -124,4 +143,4 @@ function changeQtyValue(event) {
 //     modalCheckoutContent.innerHTML = "";
 // }
 
-console.log(cartProducts);
+// console.log(cartProducts);
