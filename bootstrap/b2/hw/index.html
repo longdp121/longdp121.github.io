@@ -47,12 +47,13 @@
         </div>
         <div class="account-btns d-flex justify-content-between">
           <a href="#" class="user-btns-spacing"><i class="ti-user"></i></a>
-          <button type="button" id="cart" class="btn btn-light position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
+          <button type="button" id="cart" class="btn btn-light position-relative" data-bs-toggle="modal"
+            data-bs-target="#cartModal">
             <!-- <i class="ti-shopping-cart"></i> -->
             <!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
               <span class="visually-hidden">unread messages</span> -->
             </span>
-              
+
           </button>
         </div>
       </div>
@@ -71,148 +72,83 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid" id="products-content">
+    <div class="container-fluid">
       <div class="container text-center">
         <h1>Products</h1>
         <p>Order it for you or for your beloved ones</p>
-        <div class="row">
-          <div class="card border-0 col-lg-3 col-md-3 col-sm-6 col-sx-12">
-            <img src="./img/image_1.png" alt="" class="card-img-top" />
-            <div class="card-body d-flex flex-column justify-content-start">
-              <p class="card-title">Spiced Mint</p>
-              <div class="price-content d-flex justify-content-end">
-                <p>9.99$</p>
-              </div>
-            </div>
-          </div>
-          <div class="card border-0 col-lg-3 col-md-3 col-sm-6 col-sx-12">
-            <img src="./img/image_2.png" alt="" class="card-img-top" />
-            <div class="card-body d-flex flex-column justify-content-start">
-              <p class="card-title">Spiced Mint</p>
-              <div class="price-content d-flex justify-content-end">
-                <p>9.99$</p>
-              </div>
-            </div>
-          </div>
-          <div class="card border-0 col-lg-3 col-md-3 col-sm-6 col-sx-12">
-            <img src="./img/image_3.png" alt="" class="card-img-top" />
-            <div class="card-body d-flex flex-column justify-content-start">
-              <p class="card-title">Spiced Mint</p>
-              <div class="price-content d-flex justify-content-end">
-                <p>9.99$</p>
-              </div>
-            </div>
-          </div>
-          <div class="card border-0 col-lg-3 col-md-3 col-sm-6 col-sx-12">
-            <img src="./img/image_1.png" alt="" class="card-img-top" />
-            <div class="card-body d-flex flex-column justify-content-start">
-              <p class="card-title">Spiced Mint</p>
-              <div class="price-content d-flex justify-content-end">
-                <p>9.99$</p>
-              </div>
-            </div>
-          </div>
-          <div class="card border-0 col-lg-3 col-md-3 col-sm-6 col-sx-12">
-            <img src="./img/image_2.png" alt="" class="card-img-top" />
-            <div class="card-body d-flex flex-column justify-content-start">
-              <p class="card-title">Spiced Mint</p>
-              <div class="price-content d-flex justify-content-end">
-                <p>9.99$</p>
-              </div>
-            </div>
-          </div>
-          <div class="card border-0 col-lg-3 col-md-3 col-sm-6 col-sx-12">
-            <img src="./img/image_3.png" alt="" class="card-img-top" />
-            <div class="card-body d-flex flex-column justify-content-start">
-              <p class="card-title">Spiced Mint</p>
-              <div class="price-content d-flex justify-content-end">
-                <p>9.99$</p>
-              </div>
-            </div>
-          </div>
-          <div class="card border-0 col-lg-3 col-md-3 col-sm-6 col-sx-12">
-            <img src="./img/image_1.png" alt="" class="card-img-top" />
-            <div class="card-body d-flex flex-column justify-content-start">
-              <p class="card-title">Spiced Mint</p>
-              <div class="price-content d-flex justify-content-end">
-                <p>9.99$</p>
-              </div>
-            </div>
-          </div>
-          <div class="card border-0 col-lg-3 col-md-3 col-sm-6 col-sx-12">
-            <img src="./img/image_2.png" alt="" class="card-img-top" />
-            <div class="card-body d-flex flex-column justify-content-start">
-              <p class="card-title">Spiced Mint</p>
-              <div class="price-content d-flex justify-content-end">
-                <p>9.99$</p>
-              </div>
-            </div>
-          </div>
+        <div class="row" id="products-content">
         </div>
       </div>
-    </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-body d-flex flex-column text-center">
-            <h5>Your cart items</h5>
-            <a href="#">Back to shopping</a>
-            <div class="row modal-table-title">
-              <div class="row">
-                <div class="col-6 text-start"><p>Product</p></div>
-                <div class="col-6">
-                  <div class="row">
-                    <div class="col-4 text-start"><p>Price</p></div>
-                    <div class="col-4 text-start"><p>Quantity</p></div>
-                    <div class="col-4 text-start"><p>Total</p></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <hr>
-            <div class="row modal-table-content" id="modalChecoutContent">
-            </div>
-            <hr>
-            <div class="row d-flex justify-content-end modal-footer-content">
-              <div class="col-6">
+      <!-- Modal -->
+      <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-body d-flex flex-column text-center">
+              <h5>Your cart items</h5>
+              <a href="#">Back to shopping</a>
+              <div class="row modal-table-title">
                 <div class="row">
+                  <div class="col-6 text-start">
+                    <p>Product</p>
+                  </div>
                   <div class="col-6">
                     <div class="row">
-                      <div class="col-6">
-                        <b>Sub-total</b>
+                      <div class="col-4 text-start">
+                        <p>Price</p>
                       </div>
-                      <div class="col-6">
-                        <p>
-                          <b>$</b><b id="total-price"></b>
-                        </p>
+                      <div class="col-4 text-start">
+                        <p>Quantity</p>
+                      </div>
+                      <div class="col-4 text-start">
+                        <p>Total</p>
                       </div>
                     </div>
                   </div>
-                  <div class="col-6">
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Check-out</button>
-                  </div>
                 </div>
-                <div class="row text-start">
-                  <p class="note-text">Tax and shipping cost will be calculated later</p>
+              </div>
+              <hr>
+              <div class="row modal-table-content" id="modalChecoutContent">
+              </div>
+              <hr>
+              <div class="row d-flex justify-content-end modal-footer-content">
+                <div class="col-6">
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="row">
+                        <div class="col-6">
+                          <b>Sub-total</b>
+                        </div>
+                        <div class="col-6">
+                          <p>
+                            <b>$</b><b id="total-price"></b>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <button type="button" class="btn btn-success" data-bs-dismiss="modal">Check-out</button>
+                    </div>
+                  </div>
+                  <div class="row text-start">
+                    <p class="note-text">Tax and shipping cost will be calculated later</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <!-- Modal ends -->
     </div>
-    <!-- Modal ends -->
-  </div>
 
-  <script src="./main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
-    integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
-    crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"></script>
 </body>
 
 </html>
