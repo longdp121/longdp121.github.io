@@ -38,11 +38,6 @@
     padding: 0;
 }
 
-.tab-pane {
-    border: 1px solid black;
-    height: 500px;
-}
-
 #wrap {
     height: 5000px;
     /* background-color: aqua; */
