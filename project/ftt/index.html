@@ -53,7 +53,7 @@
           </div>
         </div>
         <div class="container-fluid" id="main">
-          <div class="container-fluid" id="slider">
+          <div class="container-fluid pb-5" id="slider">
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -74,9 +74,26 @@
               </div>
             </div>
           </div>
-          <div class="container-fluid" id="content">
-            <div class="container test-test-test">
-              Hello
+          <div class="container-fluid py-5" id="content">
+            <div class="container">
+              <nav class="d-flex justify-content-center">
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <button class="nav-link active" id="nav-tours-tab" data-bs-toggle="tab" data-bs-target="#nav-tours" type="button" role="tab" aria-controls="nav-tours" aria-selected="true">Tours</button>
+                  <button class="nav-link" id="nav-travel-news-tab" data-bs-toggle="tab" data-bs-target="#nav-travel-news" type="button" role="tab" aria-controls="nav-travel-news" aria-selected="false">Travel News</button>
+                  <button class="nav-link" id="nav-about-us-tab" data-bs-toggle="tab" data-bs-target="#nav-about-us" type="button" role="tab" aria-controls="nav-about-us" aria-selected="false">About us</button>
+                </div>
+              </nav>
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-tours" role="tabpanel" aria-labelledby="nav-tours-tab">
+                  <div class="row">TOurs</div>
+                </div>
+                <div class="tab-pane fade" id="nav-travel-news" role="tabpanel" aria-labelledby="nav-travel-news-tab">
+                  Travel News
+                </div>
+                <div class="tab-pane fade" id="nav-about-us" role="tabpanel" aria-labelledby="nav-about-us-tab">
+                  About Us
+                </div>
+              </div>
             </div>
           </div>
         </div>

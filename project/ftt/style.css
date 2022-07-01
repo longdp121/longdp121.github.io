@@ -10,7 +10,7 @@
         font-size: 11px;
     }
     .slider-text-content {
-        font-size: 35px;
+        font-size: 30px;
     }
     button.nav-btn:hover {
         border-bottom: 2px solid #b63327;
@@ -36,6 +36,11 @@
 /* Main css */
 .container-fluid {
     padding: 0;
+}
+
+.tab-pane {
+    border: 1px solid black;
+    height: 500px;
 }
 
 #wrap {
@@ -73,9 +78,4 @@ img {
 
 .slider-text-content {
     color: #FFE4E1;
-}
-
-.test-test-test {
-    background-color: #b63327;
-    height: 400px;
 }
