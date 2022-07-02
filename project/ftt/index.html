@@ -1,467 +1,414 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Hanoi Foodtasting Tours | Hanoi Street Food</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
 
-  </head>
-  <body>
-      <div class="container-fluid" id="wrap">
-        <div class="container-fluid" id="nav-bar">
-          <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                  <img src="./img/logo_tasting.png" alt="logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                      <button type="button" class="nav-link nav-btn">Home</button>
-                      <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
-                    </li>
-                    <li class="nav-item">
-                      <button type="button" class="nav-link nav-btn">About Us</button>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <button type="button" class="nav-link dropdown-toggle nav-btn" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hanoi Food Tours</button>
-                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><button type="button" class="dropdown-item">Hello</button></li>
-                        <li><button type="button" class="dropdown-item">Hello</button></li>
-                        <li><button type="button" class="dropdown-item">Hello</button></li>
-                        <li><button type="button" class="dropdown-item">Hello</button></li>
-                        <li><button type="button" class="dropdown-item">Hello</button></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <button type="button" class="nav-link nav-btn">Vietnamese Receipes</button>
-                    </li>
-                    <li class="nav-item">
-                      <button type="button" class="nav-link nav-btn">Contact Us</button>
-                    </li>
+<head>
+  <title>Hanoi Foodtasting Tours | Hanoi Street Food</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+  <div class="container-fluid" id="wrap">
+    <div class="container-fluid" id="nav-bar">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="./img/logo_tasting.png" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <button type="button" class="nav-link nav-btn" id="home-btn" onclick="renderHomePage()">Home</button>
+                  <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
+                </li>
+                <li class="nav-item">
+                  <button type="button" class="nav-link nav-btn">About Us</button>
+                </li>
+                <li class="nav-item dropdown">
+                  <button type="button" class="nav-link dropdown-toggle nav-btn" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">Hanoi Food Tours</button>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><button type="button" class="dropdown-item">Hello</button></li>
+                    <li><button type="button" class="dropdown-item">Hello</button></li>
+                    <li><button type="button" class="dropdown-item">Hello</button></li>
+                    <li><button type="button" class="dropdown-item">Hello</button></li>
+                    <li><button type="button" class="dropdown-item">Hello</button></li>
                   </ul>
-                </div>
-              </div>
-            </nav>
+                </li>
+                <li class="nav-item">
+                  <button type="button" class="nav-link nav-btn">Vietnamese Receipes</button>
+                </li>
+                <li class="nav-item">
+                  <button type="button" class="nav-link nav-btn">Contact Us</button>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="container-fluid" id="main">
-          <div class="container-fluid pb-5" id="slider">
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="d-flex justify-content-center align-items-center slide-item" style="background-image: url('./img/sliders/slider_1.jpg');">
-                    <p class="slider-text-content fw-bolder">More Than Just Food tour</p>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="d-flex justify-content-center align-items-center slide-item" style="background-image: url('./img/sliders/slider_2.jpg')">
-                    <p class="slider-text-content fw-bolder">Vegan Friendly</p>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="d-flex justify-content-center align-items-center slide-item" style="background-image: url('./img/sliders/slider_3.jpg')">
-                    <p class="slider-text-content fw-bolder">Discover Hanoi Old Quarter</p>
-                  </div>
-                </div>
+        </nav>
+      </div>
+    </div>
+    <div class="container-fluid" id="main">
+      <div class="container-fluid pb-5" id="slider">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="d-flex justify-content-center align-items-center slide-item"
+                style="background-image: url('./img/sliders/slider_1.jpg');">
+                <p class="slider-text-content fw-bolder">More Than Just Food tour</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="d-flex justify-content-center align-items-center slide-item"
+                style="background-image: url('./img/sliders/slider_2.jpg')">
+                <p class="slider-text-content fw-bolder">Vegan Friendly</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="d-flex justify-content-center align-items-center slide-item"
+                style="background-image: url('./img/sliders/slider_3.jpg')">
+                <p class="slider-text-content fw-bolder">Discover Hanoi Old Quarter</p>
               </div>
             </div>
           </div>
-          <div class="container-fluid py-5" id="content">
-            <div class="container">
-              <nav class="d-flex justify-content-center">
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                  <button class="nav-link active" id="nav-tours-tab" data-bs-toggle="tab" data-bs-target="#nav-tours" type="button" role="tab" aria-controls="nav-tours" aria-selected="true">Tours</button>
-                  <button class="nav-link" id="nav-travel-news-tab" data-bs-toggle="tab" data-bs-target="#nav-travel-news" type="button" role="tab" aria-controls="nav-travel-news" aria-selected="false">Travel News</button>
-                  <button class="nav-link" id="nav-about-us-tab" data-bs-toggle="tab" data-bs-target="#nav-about-us" type="button" role="tab" aria-controls="nav-about-us" aria-selected="false">About us</button>
-                </div>
-              </nav>
-              <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-tours" role="tabpanel" aria-labelledby="nav-tours-tab">
-                  <div class="container">
-                    <div class="row">
-                      <div class="card border-0 px-4 py-4 col-lg-4 col-md-4 col-sm-6 col-sx-12">
-                        <div class="card-body-box">
-                          <img src="./img/tours/tour_thumb_1.jpg" alt="tour-thumb" class="card-img-top">
-                        <div class="card-body">
-                          <h5 class="card-title">Food tour</h5>
-                          <div class="row">
-                            <div class="col-6">
-                              <p><b>From: </b>$25/person</p>
-                            </div>
-                            <div class="col-6">
-                              <p><b>Duration: </b>3-hours</p>
-                            </div>
-                          </div>
-                          <button type="button" class="btn btn-success">View Tour</button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="card border-0 px-4 py-4 col-lg-4 col-md-4 col-sm-6 col-sx-12">
-                        <div class="card-body-box">
-                          <img src="./img/tours/tour_thumb_1.jpg" alt="tour-thumb" class="card-img-top">
-                        <div class="card-body">
-                          <h5 class="card-title">Food tour</h5>
-                          <div class="row">
-                            <div class="col-6">
-                              <p><b>From: </b>$25/person</p>
-                            </div>
-                            <div class="col-6">
-                              <p><b>Duration: </b>3-hours</p>
-                            </div>
-                          </div>
-                          <button type="button" class="btn btn-success">View Tour</button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="card border-0 px-4 py-4 col-lg-4 col-md-4 col-sm-6 col-sx-12">
-                        <div class="card-body-box">
-                          <img src="./img/tours/tour_thumb_1.jpg" alt="tour-thumb" class="card-img-top">
-                        <div class="card-body">
-                          <h5 class="card-title">Food tour</h5>
-                          <div class="row">
-                            <div class="col-6">
-                              <p><b>From: </b>$25/person</p>
-                            </div>
-                            <div class="col-6">
-                              <p><b>Duration: </b>3-hours</p>
-                            </div>
-                          </div>
-                          <button type="button" class="btn btn-success">View Tour</button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="card border-0 px-4 py-4 col-lg-4 col-md-4 col-sm-6 col-sx-12">
-                        <div class="card-body-box">
-                          <img src="./img/tours/tour_thumb_1.jpg" alt="tour-thumb" class="card-img-top">
-                        <div class="card-body">
-                          <h5 class="card-title">Food tour</h5>
-                          <div class="row">
-                            <div class="col-6">
-                              <p><b>From: </b>$25/person</p>
-                            </div>
-                            <div class="col-6">
-                              <p><b>Duration: </b>3-hours</p>
-                            </div>
-                          </div>
-                          <button type="button" class="btn btn-success">View Tour</button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="card border-0 px-4 py-4 col-lg-4 col-md-4 col-sm-6 col-sx-12">
-                        <div class="card-body-box">
-                          <img src="./img/tours/tour_thumb_1.jpg" alt="tour-thumb" class="card-img-top">
-                        <div class="card-body">
-                          <h5 class="card-title">Food tour</h5>
-                          <div class="row">
-                            <div class="col-6">
-                              <p><b>From: </b>$25/person</p>
-                            </div>
-                            <div class="col-6">
-                              <p><b>Duration: </b>3-hours</p>
-                            </div>
-                          </div>
-                          <button type="button" class="btn btn-success">View Tour</button>
-                        </div>
-                        </div>
-                      </div>
-                      <div class="card border-0 px-4 py-4 col-lg-4 col-md-4 col-sm-6 col-sx-12">
-                        <div class="card-body-box">
-                          <img src="./img/tours/tour_thumb_1.jpg" alt="tour-thumb" class="card-img-top">
-                        <div class="card-body">
-                          <h5 class="card-title">Food tour</h5>
-                          <div class="row">
-                            <div class="col-6">
-                              <p><b>From: </b>$25/person</p>
-                            </div>
-                            <div class="col-6">
-                              <p><b>Duration: </b>3-hours</p>
-                            </div>
-                          </div>
-                          <button type="button" class="btn btn-success">View Tour</button>
-                        </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane fade" id="nav-travel-news" role="tabpanel" aria-labelledby="nav-travel-news-tab">
-                  <div class="container travel-news-slider-pc">
-                    <div id="slider-control-pc" class="carousel slide" data-bs-ride="carousel">
-                      <div class="carousel-inner">
-                        <div class="carousel-item active">
-                          <div class="row">
-                            <div class="col-4 border-0 px-4 py-4">
-                              <div class="card card-body-box">
-                                <img src="./img/news/news_img1.jpg" alt="news-img" class="card-img-top">
-                                <div class="card-body">
-                                  <h5 class="card-title">A nice news!</h5>
-                                  <div class="row">
-                                    <div class="col-6 text-start">
-                                      <p>01 Jan 2022</p>
-                                    </div>
-                                    <div class="col-6 text-end">
-                                      <button type="button" class="btn btn-primary">Read news</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-4 border-0 px-4 py-4">
-                              <div class="card card-body-box">
-                                <img src="./img/news/news_img3.jpg" alt="news-img" class="card-img-top">
-                                <div class="card-body">
-                                  <h5 class="card-title">A nice news!</h5>
-                                  <div class="row">
-                                    <div class="col-6 text-start">
-                                      <p>01 Jan 2022</p>
-                                    </div>
-                                    <div class="col-6 text-end">
-                                      <button type="button" class="btn btn-primary">Read news</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-4 border-0 px-4 py-4">
-                              <div class="card card-body-box">
-                                <img src="./img/news/news_img2.jpg" alt="news-img" class="card-img-top">
-                                <div class="card-body">
-                                  <h5 class="card-title">A nice news!</h5>
-                                  <div class="row">
-                                    <div class="col-6 text-start">
-                                      <p>01 Jan 2022</p>
-                                    </div>
-                                    <div class="col-6 text-end">
-                                      <button type="button" class="btn btn-primary">Read news</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="carousel-item">
-                          <div class="row">
-                            <div class="col-4 border-0 px-4 py-4">
-                              <div class="card card-body-box">
-                                <img src="./img/news/news_img1.jpg" alt="news-img" class="card-img-top">
-                                <div class="card-body">
-                                  <h5 class="card-title">A nice news!</h5>
-                                  <div class="row">
-                                    <div class="col-6 text-start">
-                                      <p>01 Jan 2022</p>
-                                    </div>
-                                    <div class="col-6 text-end">
-                                      <button type="button" class="btn btn-primary">Read news</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-4 border-0 px-4 py-4">
-                              <div class="card card-body-box">
-                                <img src="./img/news/news_img3.jpg" alt="news-img" class="card-img-top">
-                                <div class="card-body">
-                                  <h5 class="card-title">A nice news!</h5>
-                                  <div class="row">
-                                    <div class="col-6 text-start">
-                                      <p>01 Jan 2022</p>
-                                    </div>
-                                    <div class="col-6 text-end">
-                                      <button type="button" class="btn btn-primary">Read news</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-4 border-0 px-4 py-4">
-                              <div class="card card-body-box">
-                                <img src="./img/news/news_img2.jpg" alt="news-img" class="card-img-top">
-                                <div class="card-body">
-                                  <h5 class="card-title">A nice news!</h5>
-                                  <div class="row">
-                                    <div class="col-6 text-start">
-                                      <p>01 Jan 2022</p>
-                                    </div>
-                                    <div class="col-6 text-end">
-                                      <button type="button" class="btn btn-primary">Read news</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="carousel-item">
-                          <div class="row">
-                            <div class="col-4 border-0 px-4 py-4">
-                              <div class="card card-body-box">
-                                <img src="./img/news/news_img1.jpg" alt="news-img" class="card-img-top">
-                                <div class="card-body">
-                                  <h5 class="card-title">A nice news!</h5>
-                                  <div class="row">
-                                    <div class="col-6 text-start">
-                                      <p>01 Jan 2022</p>
-                                    </div>
-                                    <div class="col-6 text-end">
-                                      <button type="button" class="btn btn-primary">Read news</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-4 border-0 px-4 py-4">
-                              <div class="card card-body-box">
-                                <img src="./img/news/news_img3.jpg" alt="news-img" class="card-img-top">
-                                <div class="card-body">
-                                  <h5 class="card-title">A nice news!</h5>
-                                  <div class="row">
-                                    <div class="col-6 text-start">
-                                      <p>01 Jan 2022</p>
-                                    </div>
-                                    <div class="col-6 text-end">
-                                      <button type="button" class="btn btn-primary">Read news</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-4 border-0 px-4 py-4">
-                              <div class="card card-body-box">
-                                <img src="./img/news/news_img2.jpg" alt="news-img" class="card-img-top">
-                                <div class="card-body">
-                                  <h5 class="card-title">A nice news!</h5>
-                                  <div class="row">
-                                    <div class="col-6 text-start">
-                                      <p>01 Jan 2022</p>
-                                    </div>
-                                    <div class="col-6 text-end">
-                                      <button type="button" class="btn btn-primary">Read news</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <button class="carousel-control-prev" type="button" data-bs-target="#slider-control-pc" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                      </button>
-                      <button class="carousel-control-next" type="button" data-bs-target="#slider-control-pc" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                      </button>
-                    </div>
-                  </div>
-
-                  <div class="container travel-news-slider-mobile">
-                    <div id="slider-control-mobile" class="carousel slide" data-bs-ride="carousel">
-                      <div class="carousel-inner">
-                        <div class="carousel-item active">
-                          <div class="card border-0 px-4 py-4">
-                            <div class="card-body-box">
-                              <img src="./img/news/news_img1.jpg" alt="news-img" class="card-img-top">
-                              <div class="card-body">
-                                <h5 class="card-title">Nice news mobile</h5>
-                                <div class="row">
-                                  <div class="col-6 text-start">
-                                    <p>26 Aug 1993</p>
-                                  </div>
-                                  <div class="col-6 text-end">
-                                    <button type="button" class="btn btn-primary">Read news</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="carousel-item">
-                          <div class="card border-0 px-4 py-4">
-                            <div class="card-body-box">
-                              <img src="./img/news/news_img2.jpg" alt="news-img" class="card-img-top">
-                              <div class="card-body">
-                                <h5 class="card-title">Nice news mobile</h5>
-                                <div class="row">
-                                  <div class="col-6 text-start">
-                                    <p>26 Aug 1993</p>
-                                  </div>
-                                  <div class="col-6 text-end">
-                                    <button type="button" class="btn btn-primary">Read news</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="carousel-item">
-                          <div class="card border-0 px-4 py-4">
-                            <div class="card-body-box">
-                              <img src="./img/news/news_img3.jpg" alt="news-img" class="card-img-top">
-                              <div class="card-body">
-                                <h5 class="card-title">Nice news mobile</h5>
-                                <div class="row">
-                                  <div class="col-6 text-start">
-                                    <p>26 Aug 1993</p>
-                                  </div>
-                                  <div class="col-6 text-end">
-                                    <button type="button" class="btn btn-primary">Read news</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <button class="carousel-control-prev" type="button" data-bs-target="#slider-control-mobile" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                      </button>
-                      <button class="carousel-control-next" type="button" data-bs-target="#slider-control-mobile" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane fade" id="nav-about-us" role="tabpanel" aria-labelledby="nav-about-us-tab">
-                  <div class="container py-5">
-                    <div class="row">
-                      <div class="col-12">
-                        <div class="row">
-                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <img class="img-style" src="./img/about-us.jpg" alt="">
-                          </div>
-                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="row text-center">
-                              <h5>All about us!</h5>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, error ut eligendi magnam nemo voluptatibus, repellendus sunt, fugiat perferendis quasi quidem! Molestias nisi eos laboriosam molestiae excepturi suscipit ea porro. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, error ut eligendi magnam nemo voluptatibus, repellendus sunt, fugiat perferendis quasi quidem! Molestias nisi eos laboriosam molestiae excepturi suscipit ea porro. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, error ut eligendi magnam nemo voluptatibus, repellendus sunt, fugiat perferendis quasi quidem! Molestias nisi eos laboriosam molestiae excepturi suscipit ea porro.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container-fluid text-center" id="footer">
-          FOTTER
         </div>
       </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
-  </body>
+      <div class="container-fluid py-5" id="content">
+        <div class="container">
+          <nav class="d-flex justify-content-center">
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="nav-tours-tab" data-bs-toggle="tab" data-bs-target="#nav-tours"
+                type="button" role="tab" aria-controls="nav-tours" aria-selected="true">Tours</button>
+              <button class="nav-link" id="nav-travel-news-tab" data-bs-toggle="tab" data-bs-target="#nav-travel-news"
+                type="button" role="tab" aria-controls="nav-travel-news" aria-selected="false">Travel News</button>
+              <button class="nav-link" id="nav-about-us-tab" data-bs-toggle="tab" data-bs-target="#nav-about-us"
+                type="button" role="tab" aria-controls="nav-about-us" aria-selected="false">About us</button>
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-tours" role="tabpanel" aria-labelledby="nav-tours-tab">
+              <div class="container">
+                <div class="row">
+                  <!-- Tour card starts -->
+                  <div class="card border-0 px-4 py-4 col-lg-4 col-md-4 col-sm-6 col-sx-12">
+                    <div class="card-body-box">
+                      <img src="./img/tours/tour_thumb_1.jpg" alt="tour-thumb" class="card-img-top">
+                      <div class="card-body">
+                        <h5 class="card-title">Food tour</h5>
+                        <div class="row">
+                          <div class="col-6">
+                            <p><b>From: </b>$25/person</p>
+                          </div>
+                          <div class="col-6">
+                            <p><b>Duration: </b>3-hours</p>
+                          </div>
+                        </div>
+                        <button type="button" class="btn btn-success" onclick="testBtn()">Bấm đi</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Tour card ends -->
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="nav-travel-news" role="tabpanel" aria-labelledby="nav-travel-news-tab">
+              <div class="container travel-news-slider-pc">
+                <div id="slider-control-pc" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <div class="row justify-content-center">
+                        <div class="col-4 border-0 px-4 py-4">
+                          <div class="card card-body-box">
+                            <img src="./img/news/news_img1.jpg" alt="news-img" class="card-img-top">
+                            <div class="card-body">
+                              <h5 class="card-title">A nice news!</h5>
+                              <div class="row">
+                                <div class="col-6 text-start">
+                                  <p>01 Jan 2022</p>
+                                </div>
+                                <div class="col-6 text-end">
+                                  <button type="button" class="btn btn-primary">Read news</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-4 border-0 px-4 py-4">
+                          <div class="card card-body-box">
+                            <img src="./img/news/news_img3.jpg" alt="news-img" class="card-img-top">
+                            <div class="card-body">
+                              <h5 class="card-title">A nice news!</h5>
+                              <div class="row">
+                                <div class="col-6 text-start">
+                                  <p>01 Jan 2022</p>
+                                </div>
+                                <div class="col-6 text-end">
+                                  <button type="button" class="btn btn-primary">Read news</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-4 border-0 px-4 py-4">
+                          <div class="card card-body-box">
+                            <img src="./img/news/news_img2.jpg" alt="news-img" class="card-img-top">
+                            <div class="card-body">
+                              <h5 class="card-title">A nice news!</h5>
+                              <div class="row">
+                                <div class="col-6 text-start">
+                                  <p>01 Jan 2022</p>
+                                </div>
+                                <div class="col-6 text-end">
+                                  <button type="button" class="btn btn-primary">Read news</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="row justify-content-center">
+                        <div class="col-4 border-0 px-4 py-4">
+                          <div class="card card-body-box">
+                            <img src="./img/news/news_img1.jpg" alt="news-img" class="card-img-top">
+                            <div class="card-body">
+                              <h5 class="card-title">A nice news!</h5>
+                              <div class="row">
+                                <div class="col-6 text-start">
+                                  <p>01 Jan 2022</p>
+                                </div>
+                                <div class="col-6 text-end">
+                                  <button type="button" class="btn btn-primary">Read news</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-4 border-0 px-4 py-4">
+                          <div class="card card-body-box">
+                            <img src="./img/news/news_img3.jpg" alt="news-img" class="card-img-top">
+                            <div class="card-body">
+                              <h5 class="card-title">A nice news!</h5>
+                              <div class="row">
+                                <div class="col-6 text-start">
+                                  <p>01 Jan 2022</p>
+                                </div>
+                                <div class="col-6 text-end">
+                                  <button type="button" class="btn btn-primary">Read news</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-4 border-0 px-4 py-4">
+                          <div class="card card-body-box">
+                            <img src="./img/news/news_img2.jpg" alt="news-img" class="card-img-top">
+                            <div class="card-body">
+                              <h5 class="card-title">A nice news!</h5>
+                              <div class="row">
+                                <div class="col-6 text-start">
+                                  <p>01 Jan 2022</p>
+                                </div>
+                                <div class="col-6 text-end">
+                                  <button type="button" class="btn btn-primary">Read news</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="row justify-content-center">
+                        <div class="col-4 border-0 px-4 py-4">
+                          <div class="card card-body-box">
+                            <img src="./img/news/news_img1.jpg" alt="news-img" class="card-img-top">
+                            <div class="card-body">
+                              <h5 class="card-title">A nice news!</h5>
+                              <div class="row">
+                                <div class="col-6 text-start">
+                                  <p>01 Jan 2022</p>
+                                </div>
+                                <div class="col-6 text-end">
+                                  <button type="button" class="btn btn-primary">Read news</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-4 border-0 px-4 py-4">
+                          <div class="card card-body-box">
+                            <img src="./img/news/news_img3.jpg" alt="news-img" class="card-img-top">
+                            <div class="card-body">
+                              <h5 class="card-title">A nice news!</h5>
+                              <div class="row">
+                                <div class="col-6 text-start">
+                                  <p>01 Jan 2022</p>
+                                </div>
+                                <div class="col-6 text-end">
+                                  <button type="button" class="btn btn-primary">Read news</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#slider-control-pc"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#slider-control-pc"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="container travel-news-slider-mobile">
+                <div id="slider-control-mobile" class="carousel slide" data-bs-ride="carousel">
+                  <!-- carousel inner core starts -->
+                  <div class="carousel-inner">
+                    <!-- carousel item starts -->
+                    <div class="carousel-item active">
+                      <div class="card border-0 px-4 py-4">
+                        <div class="card-body-box">
+                          <img src="./img/news/news_img1.jpg" alt="news-img" class="card-img-top">
+                          <div class="card-body">
+                            <h5 class="card-title">Nice news mobile</h5>
+                            <div class="row">
+                              <div class="col-6 text-start">
+                                <p>26 Aug 1993</p>
+                              </div>
+                              <div class="col-6 text-end">
+                                <button type="button" class="btn btn-primary">Read news</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Carousel item ends -->
+                    <div class="carousel-item">
+                      <div class="card border-0 px-4 py-4">
+                        <div class="card-body-box">
+                          <img src="./img/news/news_img2.jpg" alt="news-img" class="card-img-top">
+                          <div class="card-body">
+                            <h5 class="card-title">Nice news mobile</h5>
+                            <div class="row">
+                              <div class="col-6 text-start">
+                                <p>26 Aug 1993</p>
+                              </div>
+                              <div class="col-6 text-end">
+                                <button type="button" class="btn btn-primary">Read news</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="card border-0 px-4 py-4">
+                        <div class="card-body-box">
+                          <img src="./img/news/news_img3.jpg" alt="news-img" class="card-img-top">
+                          <div class="card-body">
+                            <h5 class="card-title">Nice news mobile</h5>
+                            <div class="row">
+                              <div class="col-6 text-start">
+                                <p>26 Aug 1993</p>
+                              </div>
+                              <div class="col-6 text-end">
+                                <button type="button" class="btn btn-primary">Read news</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- carousel inner core ends -->
+                  <button class="carousel-control-prev" type="button" data-bs-target="#slider-control-mobile"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#slider-control-mobile"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="nav-about-us" role="tabpanel" aria-labelledby="nav-about-us-tab">
+              <div class="container py-5">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <img class="img-style" src="./img/about-us.jpg" alt="">
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 my-5">
+                        <div class="row text-center">
+                          <h5>All about us!</h5>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, error ut eligendi magnam
+                          nemo voluptatibus, repellendus sunt, fugiat perferendis quasi quidem! Molestias nisi eos
+                          laboriosam molestiae excepturi suscipit ea porro. Lorem ipsum dolor sit amet, consectetur
+                          adipisicing elit. Earum, error ut eligendi magnam nemo voluptatibus, repellendus sunt, fugiat
+                          perferendis quasi quidem! Molestias nisi eos laboriosam molestiae excepturi suscipit ea porro.
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, error ut eligendi magnam nemo
+                          voluptatibus, repellendus sunt, fugiat perferendis quasi quidem! Molestias nisi eos laboriosam
+                          molestiae excepturi suscipit ea porro.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid display-none" id="tour">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            hell
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            hello
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid text-center" id="footer">
+      FOTTER
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+    crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+</body>
+
 </html>

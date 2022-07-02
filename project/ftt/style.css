@@ -40,6 +40,10 @@
 
 
 /* Main css */
+.display-none {
+    display: none;
+}
+
 .container-fluid {
     padding: 0;
 }
@@ -92,7 +96,7 @@ img {
 
 .test-border {
     border: 1px solid red;
-    height: auto;
+    height: 500px;
 }
 .g {
     background-color: green;
