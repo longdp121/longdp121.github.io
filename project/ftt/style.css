@@ -17,6 +17,9 @@
         padding-bottom: 3.5px;
         color: #b63327;
     }
+    .travel-news-slider-pc {
+        display: none;
+    }
 }
 
 @media only screen and (min-width: 769px) {
@@ -27,6 +30,9 @@
         border-bottom: 2px solid #b63327;
         padding-bottom: 6px;
         color: #b63327;
+    }
+    .travel-news-slider-mobile {
+        display: none;
     }
 }
 
