@@ -1,18 +1,19 @@
 let tours = [
-    {img: "img/tours/tour_thumb_1.jpg", name: "Food tour 1", minPrice: 25, duration: 3},
-    {img: "img/tours/tour_thumb_2.jpg", name: "Food tour 2", minPrice: 25, duration: 3},
-    {img: "img/tours/tour_thumb_3.jpg", name: "Food tour 3", minPrice: 25, duration: 1},
-    {img: "img/tours/tour_thumb_4.jpg", name: "Food tour 4", minPrice: 2, duration: 3},
-    {img: "img/tours/tour_thumb_5.jpg", name: "Food tour 5", minPrice: 5, duration: 30},
-    {img: "img/tours/tour_thumb_6.jpg", name: "Food tour 6", minPrice: 215, duration: 3},
-    {img: "img/tours/tour_thumb_1.jpg", name: "Food tour 7", minPrice: 255, duration: 9},
-    {img: "img/tours/tour_thumb_2.jpg", name: "Food tour 8", minPrice: 25, duration: 6.8},
-    {img: "img/tours/tour_thumb_3.jpg", name: "Food tour 9", minPrice: 25, duration: 6.8},
+    {tour_id: 1, img: "img/tours/tour_thumb_1.jpg", name: "Food tour 1", minPrice: 25, duration: 3},
+    {tour_id: 2, img: "img/tours/tour_thumb_2.jpg", name: "Food tour 2", minPrice: 25, duration: 3},
+    {tour_id: 3, img: "img/tours/tour_thumb_3.jpg", name: "Food tour 3", minPrice: 25, duration: 1},
+    {tour_id: 4, img: "img/tours/tour_thumb_4.jpg", name: "Food tour 4", minPrice: 2, duration: 3},
+    {tour_id: 5, img: "img/tours/tour_thumb_5.jpg", name: "Food tour 5", minPrice: 5, duration: 3},
+    {tour_id: 6, img: "img/tours/tour_thumb_6.jpg", name: "Food tour 6", minPrice: 21, duration: 3},
+    {tour_id: 7, img: "img/tours/tour_thumb_1.jpg", name: "Food tour 7", minPrice: 25, duration: 9},
+    {tour_id: 8, img: "img/tours/tour_thumb_2.jpg", name: "Food tour 8", minPrice: 25, duration: 6},
+    {tour_id: 9, img: "img/tours/tour_thumb_3.jpg", name: "Food tour 9", minPrice: 25, duration: 6},
 ];
 
 let main = document.getElementById("main");
 let tour = document.getElementById("tour");
 let rowTours = document.getElementById("row-tours");
+let tourImgThumb = document.getElementById("tour-img-thumb");
 
 function renderTours (arr) {
     let html = "";
@@ -31,7 +32,7 @@ function renderTours (arr) {
                 <p><b>Duration: </b>${obj.duration}-hours</p>
               </div>
             </div>
-            <button type="button" class="btn btn-success" onclick="testBtn()">Bấm đi</button>
+            <button type="button" class="btn btn-success" id="show-tour-btn-id${obj.tour_id}" onclick="viewTourBtn()">View Tour</button>
           </div>
         </div>
       </div>
@@ -41,3 +42,33 @@ function renderTours (arr) {
 }
 
 renderTours(tours)
+
+function viewTourBtn () {
+    let tourId = document.getElementById("tour");
+    let tourImgThumb = document.getElementById("tour-img-thumb")
+    let tourDetails = document.getElementById("tour-details");
+    main.className = "container-fluid display-none";
+    tourId.className = "container-fluid";
+    let tourClickedId = event.target.id.slice(16);
+    let html = "";
+    let img = "";
+    let tour = tours.find(function(tour) {
+        return tour.tour_id == tourClickedId;
+    })
+    console.log(tour);
+    html += `
+    <h1>${tour.name}</h1>
+    <p>From: $${tour.minPrice}/person</p>
+    <p>${tour.duration} hours tour long.</p>
+    `;
+    img += `
+    <img src=${tour.img} alt="tour-img">
+    `;
+    tourDetails.innerHTML = html;
+    tourImgThumb.innerHTML = img;
+}
+
+function showHomePage() {
+    main.className = "container-fluid";
+    tour.className = "container-fluid display-none";
+}
