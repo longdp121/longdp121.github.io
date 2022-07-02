@@ -15,6 +15,25 @@ let tour = document.getElementById("tour");
 let rowTours = document.getElementById("row-tours");
 let tourImgThumb = document.getElementById("tour-img-thumb");
 
+// Creat func
+function getTourById(id, arr) {
+  return arr.find(function(obj) {
+    return obj.tour_id == id;
+  })
+}
+
+function rederNavDropdown (arr) {
+  let navDropdownTour = document.getElementById("navbar-tour-list");
+  let html = "";
+  arr.forEach(function(obj) {
+    html += `
+    <li><button type="button" class="dropdown-item" id="tour_id_${obj.tour_id}" onclick="viewTourNavBtn()">${obj.name}</button></li>
+    `
+  })
+  console.log(html)
+  navDropdownTour.innerHTML = html;
+}
+
 function renderTours (arr) {
     let html = "";
     for (obj of arr) {
@@ -32,7 +51,7 @@ function renderTours (arr) {
                 <p><b>Duration: </b>${obj.duration}-hours</p>
               </div>
             </div>
-            <button type="button" class="btn btn-success" id="show-tour-btn-id${obj.tour_id}" onclick="viewTourBtn()">View Tour</button>
+            <button type="button" class="btn btn-success" id="show-tour-btn-id${obj.tour_id}"" onclick="viewTourBtn()">View Tour</button>
           </div>
         </div>
       </div>
@@ -40,8 +59,34 @@ function renderTours (arr) {
     }
     rowTours.innerHTML = html;
 }
+// /////////////////////////////////////////////////////////
 
+rederNavDropdown(tours)
 renderTours(tours)
+
+function viewTourNavBtn(arr) {
+  let tourClickedId = event.target.id.slice(8)
+  console.log(tourClickedId)
+  let tour = getTourById(tourClickedId, tours);
+  console.log(tour)
+  let tourId = document.getElementById("tour");
+  let tourImgThumb = document.getElementById("tour-img-thumb")
+  let tourDetails = document.getElementById("tour-details");
+  main.className = "container-fluid display-none";
+  tourId.className = "container-fluid";
+  let html = "";
+  let img = "";
+  html += `
+    <h1>${tour.name}</h1>
+    <p>From: $${tour.minPrice}/person</p>
+    <p>${tour.duration} hours tour long.</p>
+    `;
+    img += `
+    <img src=${tour.img} alt="tour-img">
+    `;
+    tourDetails.innerHTML = html;
+    tourImgThumb.innerHTML = img;
+}
 
 function viewTourBtn () {
     let tourId = document.getElementById("tour");
@@ -52,9 +97,10 @@ function viewTourBtn () {
     let tourClickedId = event.target.id.slice(16);
     let html = "";
     let img = "";
-    let tour = tours.find(function(tour) {
-        return tour.tour_id == tourClickedId;
-    })
+    // let tour = tours.find(function(tour) {
+    //     return tour.tour_id == tourClickedId;
+    // })
+    let tour = getTourById(tourClickedId, tours);
     console.log(tour);
     html += `
     <h1>${tour.name}</h1>
