@@ -13,9 +13,9 @@ let tours = [
     imgThumb: "./img/tours/FoodTour1/tour_thumb.jpg",
     img: [
       "img/tours/FoodTour1/tour_imgs/img1.jpg",
-      "img/tours/FoodTour1/tour_imgs/img2.jpg",
-      "img/tours/FoodTour1/tour_imgs/img3.jpg",
-      "img/tours/FoodTour1/tour_imgs/img4.jpg"
+      // "img/tours/FoodTour1/tour_imgs/img2.jpg",
+      // "img/tours/FoodTour1/tour_imgs/img3.jpg",
+      // "img/tours/FoodTour1/tour_imgs/img4.jpg"
     ],
     minPrice: 25,
     duration: 3
@@ -42,11 +42,11 @@ function renderTourfromTourObj(obj) {
   })
   tourImgs.innerHTML = html;
   let tourDetails = document.getElementById("tourDetails");
-  // tourDetails.innerHTML = `
-  // <h1>${obj.name}</h1>
-  // <p>From: $${obj.minPrice}/person</p>
-  // <p>${obj.duration}-hours</p>
-  // `;
+  tourDetails.innerHTML = `
+    <h1>${obj.name}</h1>
+    <p>From: $${obj.minPrice}/person</p>
+    <p>${obj.duration}-hours</p>
+  `;
 }
 
 // renderTourfromTourObj(tour)
