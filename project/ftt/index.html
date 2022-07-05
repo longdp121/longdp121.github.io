@@ -29,16 +29,21 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <button type="button" class="nav-link nav-btn" id="home-btn" onclick="showHomePage()">Home</button>
-                  <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
+                  <!-- <button type="button" class="nav-link nav-btn" id="home-btn" onclick="showHomePage()">Home</button> -->
+                  <a class="nav-link active" aria-current="page" href="#" onclick="showHomeBtn()">Home</a>
                 </li>
                 <li class="nav-item">
                   <button type="button" class="nav-link nav-btn">About Us</button>
                 </li>
                 <li class="nav-item dropdown">
-                  <button type="button" class="nav-link dropdown-toggle nav-btn" id="navbarDropdown" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">Hanoi Food Tours</button>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="navbar-tour-list">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTours" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Tours
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownTours">
+                    <!-- <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                   </ul>
                 </li>
                 <li class="nav-item">
@@ -95,7 +100,23 @@
               <div class="container">
                 <div class="row" id="row-tours">
                   <!-- Tour card starts -->
-
+                  <!-- <div class="card border-0 px-4 py-4 col-lg-4 col-md-4 col-sm-6 col-sx-12">
+                    <div class="card-body-box">
+                      <img src="./img/tours/tour_thumb_1.jpg" alt="tour-thumb" class="card-img-top">
+                      <div class="card-body">
+                        <h5 class="card-title">Tour name</h5>
+                        <div class="row">
+                          <div class="col-6">
+                            <p><b>From: </b>$12/person</p>
+                          </div>
+                          <div class="col-6">
+                            <p><b>Duration: </b>3-hours</p>
+                          </div>
+                        </div>
+                        <button type="button" class="btn btn-success" id="show-tour-btn-id${obj.tour_id}" onclick="viewTourBtn()">View Tour</button>
+                      </div>
+                    </div>
+                  </div> -->
                   <!-- Tour card ends -->
                 </div>
               </div>
@@ -367,16 +388,13 @@
     <div class="container-fluid display-none" id="tour">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="tour-img-thumb">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="tourImgs">
+            <div class="row"></div>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <form>
               <div class="mb-3">
-                <div class="row" id="tour-details">
-                  <h1></h1>
-                  <p>From: $25/person</p>
-                  <p></p>
-                </div>
+                <div class="row" id="tourDetails"></div>
                 <div class="row">
                   <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
