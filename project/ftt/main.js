@@ -12,13 +12,25 @@ let tours = [
     name: "Hanoi Street Food Tours",
     imgThumb: "./img/tours/FoodTour1/tour_thumb.jpg",
     img: [
-      "img/tours/FoodTour1/tour_imgs/img1.jpg",
+      "img/tours/FoodTour1/tour_imgs/img1.jpg1",
       // "img/tours/FoodTour1/tour_imgs/img2.jpg",
       // "img/tours/FoodTour1/tour_imgs/img3.jpg",
       // "img/tours/FoodTour1/tour_imgs/img4.jpg"
     ],
     minPrice: 25,
-    duration: 3
+    duration: 3,
+    itinerary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula eu lectus vel consectetur. Maecenas eu quam et magna malesuada tincidunt. Praesent massa nunc, commodo at commodo non, placerat at tortor. Vivamus imperdiet ex vel cursus mattis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec imperdiet dui a iaculis aliquam. Maecenas consectetur vitae lacus ac mollis. Integer ac nisi et enim consectetur vulputate. Phasellus dictum ligula augue, eget commodo dolor tincidunt et.",
+    price: {
+      group: 25,
+      private: {
+        1: 40,
+        2: 35,
+        3: 30,
+        4: 30,
+        5: 30,
+        6: 25
+      }
+    }
   }
 ]
 
@@ -47,6 +59,12 @@ function renderTourfromTourObj(obj) {
     <p>From: $${obj.minPrice}/person</p>
     <p>${obj.duration}-hours</p>
   `;
+  let navItinerary = document.getElementById("navItinerary");
+  navItinerary.innerText = obj.itinerary;
+  for (let key in obj.price) {
+    console.log(key)
+    console.log(obj.price[key])
+  }
 }
 
 // renderTourfromTourObj(tour)
@@ -96,6 +114,7 @@ function viewTourBtn() {
   main.className = "container-fluid display-none";
   tour.className = "container-fluid";
   let tourClicked = getTourById(tourClickedId, tours);
+  console.log(tourClicked)
   renderTourfromTourObj(tourClicked)
 }
 
