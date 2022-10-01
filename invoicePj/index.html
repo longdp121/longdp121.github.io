@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="options-bar">
+        <label for="options"></label>
+        <select name="options" id="options" onchange="optionHandle()">
+            <option value="none">none</option>
+        </select>
+    </div>
+    <div class="container">
+        <!-- Invoice header and logo -->
+        <div class="header">
+            <div class="row d-flex justify-content-between">
+                <div class="col-3">
+                    <img id="logo" src="./imgs/LogoSapphire.png" alt="logo sapphire">
+                </div>
+                <div class="col-3 invoice-title">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <h4>INVOICE</h4>
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <h4>BOOKING CONFIRMATION</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-between">
+                <div class="col-4 d-flex flex-column justify-content-start">
+                    <p>41 Luong Van Can St., Hoan Kiem, Hanoi, Vietnam </p>
+                    <p>Phone: +84 96 875 43 12</p>
+                    <p>Email: <span id="email"></span></p>
+                    <p>Website: <span id="webisteUrl"></span></p>
+                </div>
+                <div class="col-4 d-flex flex-column justify-content-start">
+                    <div class="row">
+                        <div class="col-4 d-flex justify-content-end">
+                            <p>DATE : </p>
+                        </div>
+                        <div class="col-8">
+                            <p id="todayDate">Today</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 d-flex justify-content-end">
+                            <p>INVOICE : </p>
+                        </div>
+                        <div class="col-8">
+                            <p id="invoiceNumber">2209201SB-HTT01RP01</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 d-flex justify-content-end">
+                            <p>CUSTOMER ID : </p>
+                        </div>
+                        <div class="col-8">
+                            <p>2209201SB-HTT01RP01</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Invoice body -->
+        <div class="main">
+            <div class="row d-flex justify-content-start">
+                <h4>INVOICE</h4>
+            </div>
+            <div class="row">
+                <div class="col-4 d-flex flex-column">
+                    <div class="col-12 bg-primary">
+                        <p class="text-white fw-bolder text-center">BILL TO</p>
+                    </div>
+                    <div class="col-12">
+                        <label for="customerNameInput">Customer name: </label>
+                        <input type="text" id="customerNameInput" name="customerNameInput" placeholder="Full name...">
+                        <!-- <p class="text-start">CURRIE DAVID JAMES</p> -->
+                    </div>
+                    <div class="col-12">
+                        <div class="d-flex flex-row align-items-center">
+                            <p class="text-start">Number of customer(s): </p>
+                            <div class="adultnNumberInput">
+                                <input type="number" id="adultNumber" min="1" style="width: 30px;">
+                                <label for="adultNumber">adults</label>
+                            </div>
+                            <div id="addChildrenBtn" class="opacity-0">
+                                <button type="button" class="btn btn-success" onclick="addChildren()">+ kid(s)</button>
+                            </div>
+                            <div id="childrennNumberInput" class="d-flex flex-row align-items-center d-none">
+                                <pre> + </pre>
+                                <input type="number" id="childrennNumber" min="0" style="width: 30px;">
+                                <label for="adultNumber">children</label>
+                                <div id="removeChildrenBtn" class="opacity-0">
+                                    <button type="button" class="btn btn-danger" onclick="removeChildren()">X</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label for="">Start date: </label>
+                        <input type="date" id="startDate" name="startDate">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <table class="table">
+                        <thead class="table-primary">
+                            <th scope="col"><span class="text-white">DESCRIPTION</span></th>
+                            <th scope="col"><span class="text-white">UNIT PRICE</span></th>
+                            <th scope="col"><span class="text-white">QUANTITY</span></th>
+                            <th scope="col">
+                                <div class="d-flex flex-row">
+                                    <span class="text-white">AMOUNT</span>
+                                    <div class="addRowBtn">
+                                        <button type="button" onclick="addRowBtn()">Add New</button>
+                                    </div>
+                                    <div class="addBlankRowBtn">
+                                        <button type="button" onclick="addBlankRowBtn()">Add blank</button>
+                                    </div>
+                                </div>
+                            </th>
+                        </thead>
+                        <tbody id="priceTable">
+                            <tr class="tableRow">
+                                <td class="tourName">
+                                    <label for="tourOptions"></label>
+                                    <select name="tourOptions" class="tourOptions" onchange="optionSelect(this)"></select>
+                                </td>
+                                <td class="unitPrice">
+                                    <span class="price"></span>
+                                    <span>$</span>
+                                </td>
+                                <td class="unitAmount">
+                                    <input class="unitAmountInput" type="number" min="0" onchange="quantityInput(this)">
+                                </td>
+                                <td class="amout">
+                                    <div class="d-flex flex-row">
+                                        <span class="sumPrice">0</span>
+                                        <span>$</span>
+                                        <div class="removeRowBtn">
+                                            <button type="button" onclick="closeRowBtn(this)">X</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td style="border-bottom-style: hidden"></td>
+                                <td style="border-bottom-style: hidden"></td>
+                                <td>Total</td>
+                                <td class="total">
+                                    <span id="totalPrice"></span>
+                                    <span>$</span>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0;
+}
+
+pre {
+    margin: 0;
+}
+
+.addRowBtn {
+    opacity: 0;
+}
+
+.addBlankRowBtn {
+    opacity: 0;
+}
+
+.removeRowBtn {
+    opacity: 0;
+}
+
+.addRowBtn:hover {
+    opacity: 100;
+}
+
+.addBlankRowBtn:hover {
+    opacity: 100;
+}
+
+.removeRowBtn:hover {
+    opacity: 100;
+}
