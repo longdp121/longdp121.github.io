@@ -1,4 +1,4 @@
-const dataApi = "http://localhost:3000/options"
+const dataApi = "https://github.com/longdp121/longdp121.github.io/blob/051c7da0eeaf169c03c4c5e35b91ed60e07fa4f2/invoicePj/data/tours.json"
 
 const today = new Date()
 const todayDate = document.getElementById("todayDate")
