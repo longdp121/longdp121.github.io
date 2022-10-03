@@ -1,11 +1,12 @@
-const dataApi = "https://github.com/longdp121/longdp121.github.io/blob/051c7da0eeaf169c03c4c5e35b91ed60e07fa4f2/invoicePj/data/tours.json"
+// const dataApi = "http://localhost:3000/options"
+
+const dataApi = "https://mocki.io/v1/7d0fb43e-cdac-4696-9660-a63e78d465a9";
 
 const today = new Date()
 const todayDate = document.getElementById("todayDate")
 const removeChildrenBtn = document.getElementById("removeChildrenBtn");
 const addChildrenBtn = document.getElementById("addChildrenBtn");
 const childrennNumberInput = document.getElementById("childrennNumberInput");
-// const totalPrice = document.getElementById("totalPrice");
 
 
 todayDate.textContent = `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()}`
@@ -14,12 +15,16 @@ todayDate.textContent = `${today.getFullYear()}/${today.getMonth() + 1}/${today.
 fetch(dataApi)
 .then((res) => res.json())
 .then((data) => {
-    let optionsList = Object.keys(data);
+    let optionsList = Object.keys(data.options);
+    console.log(optionsList)
     optionsList.forEach(function(option) {
-        let selectTag = document.getElementById("options")
-        let optionTag = document.createElement("option")
+        let selectTag = document.getElementById("options");
+        let optionTag = document.createElement("option");
+        console.log(optionTag)
         optionTag.value = option;
-        optionTag.innerText = data[option].name;
+        console.log(option);
+        console.log(data.options[option].name)
+        optionTag.innerText = data.options[option].name;
         selectTag.append(optionTag)
     })  
 })
@@ -36,12 +41,12 @@ function optionHandle() {
         let logo = document.getElementById("logo");
         let email = document.getElementById("email");
         let websiteUrl = document.getElementById("webisteUrl");
-        logo.src = data[option].logo;
-        email.innerText = data[option].email;
-        websiteUrl.innerText = data[option].website;
+        logo.src = data.options[option].logo;
+        email.innerText = data.options[option].email;
+        websiteUrl.innerText = data.options[option].website;
 
         //Render tour options after choose company
-        let optionsList = data[option].options;
+        let optionsList = data.options[option].options;
         let tourOptions = document.getElementsByClassName("tourOptions")[0];
         tourOptions.innerHTML = "";
         optionsList.forEach(function(item) {
@@ -53,7 +58,22 @@ function optionHandle() {
         let defaulValue = tourOptions.options[tourOptions.selectedIndex].value;
         let unitPirce = document.getElementsByClassName("price")[0];
         unitPirce.innerText = defaulValue;
+
+        //Render payment for
+        let paymentFor = document.getElementById("paymentFor");
+        paymentFor.innerText = data.options[option].name;
     })
+}
+
+//Functions
+function updateTotal(length, table) {
+    let total = 0;
+    for (let i = 0; i < length; i++) {
+        let amount = table.getElementsByClassName("tableRow")[i].getElementsByClassName("amout")[0].getElementsByClassName("sumPrice")[0].innerText;
+        total += Number(amount)
+    }
+    let totalPrice = document.getElementById("totalPrice");
+    totalPrice.innerText = total;
 }
 
 //Option tag and button handler
@@ -64,7 +84,6 @@ function optionSelect(e) {
 
     //Render unitprice
     let unitPirce = thisRow.getElementsByClassName("unitPrice")[0].getElementsByClassName("price")[0];
-    console.log(unitPirce)
     unitPirce.innerText = selectedPrice;
 
     //Calculate amount
@@ -75,6 +94,35 @@ function optionSelect(e) {
     //Update total
     let table = document.getElementById("priceTable");
     updateTotal(table.rows.length, table);
+
+    //Update pending amount
+    let totalPrice = document.getElementById("totalPrice");
+    let pendinhAmount = document.getElementById("pendinhAmount");
+    if (depositAmount.value === "") {
+        pendinhAmount.innerText = totalPrice.innerText;
+    }
+    pendinhAmount.innerText = Number(totalPrice.innerText) - Number(depositAmount.value);
+}
+
+function untirPriceInput(e) {
+    let inputValue = e.value;
+    let unitAmount = e.parentElement.parentElement.getElementsByClassName("unitAmount")[0].getElementsByClassName("unitAmountInput")[0].value;
+    let sumPrice = e.parentElement.parentElement.getElementsByClassName("amout")[0].getElementsByClassName("sumPrice")[0];
+    if (unitAmount !== "") {
+        sumPrice.innerText = Number(inputValue) * Number(unitAmount)
+    };
+
+    //Update total
+    let table = document.getElementById("priceTable");
+    updateTotal(table.rows.length, table);
+
+    //Update pending amount
+    let totalPrice = document.getElementById("totalPrice");
+    let pendinhAmount = document.getElementById("pendinhAmount");
+    if (depositAmount.value === "") {
+        pendinhAmount.innerText = totalPrice.innerText;
+    }
+    pendinhAmount.innerText = Number(totalPrice.innerText) - Number(depositAmount.value);
 }
 
 function addRowBtn() {
@@ -99,16 +147,7 @@ function addRowBtn() {
     amount.innerHTML = amountHtml.innerHTML;
 
     let table = document.getElementById("priceTable")
-    //Add back x button when add second row anytime
     let length = table.rows.length;
-    if (length == 2) {
-        for (let i = 0; i < length; i ++) {
-            let removeRowBtn = document.getElementsByClassName("removeRowBtn")[i];
-            removeRowBtn.innerHTML = `
-                <button type="button" onclick="closeRowBtn(this)">X</button>
-            `;
-        };
-    }
 
     //Clear html of row lengh + 1
     let lastRow = table.getElementsByClassName("tableRow")[length - 1];
@@ -142,11 +181,10 @@ function addBlankRowBtn() {
     tourName.append(inputTag);
 
     //Create input for unit price
-    console.log(newRow)
     unitPrice.innerHTML = unitPriceHtml.innerHTML;
     let unitPirceCell = newRow.getElementsByClassName("unitPrice")[0];
     unitPirceCell.innerHTML = `
-            <input type="number" class="price" min="0" size="5">
+            <input type="number" class="price" min="0" size="5" onchange="untirPriceInput(this)">
             <span>$</span>
     `;
 
@@ -175,21 +213,96 @@ let quantityInput = function(e) {
     //Calculate total
     let table = document.getElementById("priceTable");
     updateTotal(table.rows.length, table);
+
+    //Update pending amount in deposit
+    let totalPrice = document.getElementById("totalPrice");
+    let pendingAmount = document.getElementById("pendinhAmount");
+    let depositAmount = document.getElementById("depositAmount").value;
+    if (depositAmount === "") {
+        pendingAmount.innerText = totalPrice.innerText;
+    };
+    pendingAmount.innerText = Number(totalPrice.innerText) - Number(depositAmount)
 };
 
 let closeRowBtn = function(row){
     let table = document.getElementById("priceTable");
+    let length = table.rows.length;
+    if (length === 1) {
+        return
+    }
     let delIndex = row.parentNode.parentNode.parentNode.parentNode.rowIndex;
     table.deleteRow(delIndex - 1)
-    console.log("This is index", delIndex)
     //Remove x button for only-row
-    let length = table.rows.length;
-    if (length == 1) {
-        let removeRowBtn = document.getElementsByClassName("removeRowBtn")[0];
-        removeRowBtn.innerHTML = "";
-    }
+    // let length = table.rows.length;
+    // if (length == 1) {
+    //     let removeRowBtn = document.getElementsByClassName("removeRowBtn")[0];
+    //     removeRowBtn.innerHTML = "";
+    // };
+
     updateTotal(table.rows.length, table);
     // document.getElementById('priceTable').deleteRow(i-1);
+
+    //Update pending amount
+    let totalPrice = document.getElementById("totalPrice");
+    let pendingAmount = document.getElementById("pendinhAmount");
+    let depositAmount = document.getElementById("depositAmount").value;
+    if (depositAmount === "") {
+        pendingAmount.innerText = totalPrice.innerText;
+    };
+    pendingAmount.innerText = Number(totalPrice.innerText) - Number(depositAmount)
+};
+
+function paymentStatus(e) {
+    let paymentStatus = e.value;
+    for (let i = 0; i < e.length; i++) {
+        let optionTag = e.getElementsByTagName("option")[i];
+        let paymentStatusDiv = document.getElementsByClassName(`${optionTag.value}`)[0];
+        if (paymentStatusDiv.classList.contains(paymentStatus)) {
+            paymentStatusDiv.classList.remove("d-none")
+        };
+
+        if (!paymentStatusDiv.classList.contains(paymentStatus)) {
+            paymentStatusDiv.classList.add("d-none")
+        }
+    }
+};
+
+function updateDepositAmount(e) {
+    let depositAmount = e.value;
+    let totalPrice = document.getElementById("totalPrice").innerText;
+    let pendingAmount = document.getElementById("pendinhAmount");
+
+    pendingAmount.innerText = Number(totalPrice) - Number(depositAmount)
+};
+
+function qrCodeGenerate() {
+    let paymentLinkInput = document.getElementById("paymentLinkInput");
+    let paymentLink = document.getElementById("paymentLink").value;
+    let qrCodePaymentDiv = document.getElementById("qrCodePaymentDiv");
+    let qrCodePayment = document.getElementById("qrCodePayment");
+    if (paymentLink === "") {
+        return
+    };
+    qrCodePayment.innerHTML = "";
+    qrCodePayment.href = "";
+    let qrCode = new QRCode("qrCodePayment", {
+        width: 120,
+        height: 120,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H,
+    });
+    qrCodePayment.href = paymentLink;
+    qrCode.makeCode(paymentLink);
+    paymentLinkInput.classList.add("d-none");
+    qrCodePaymentDiv.classList.remove("d-none");
+};
+
+function editQrCode() {
+    let paymentLinkInput = document.getElementById("paymentLinkInput");
+    let qrCodePaymentDiv = document.getElementById("qrCodePaymentDiv");
+    paymentLinkInput.classList.remove("d-none");
+    qrCodePaymentDiv.classList.add("d-none");
 }
 
 let addChildren = function() {
@@ -230,33 +343,4 @@ addChildrenBtn.onmouseout = function() {
         addChildrenBtn.classList = "opacity-0"
     }
 };
-
-// function updateTotal(sl){
-//     var items = document.getElementById("priceTable");
-//     var rows = items.getElementsByClassName("roww");
-//     var totalPrice = 0;
-//     for(var i = 0; i < rows.length; i++){
-//         var row = rows[i];
-//         var unitPrice = row.getElementsByClassName("unitPrice")[0].getElementsByClassName("price")[0];
-//         var hangSoLuong = row.getElementsByClassName("unitAmount")[0].getElementsByClassName("soLuong")[0];
-//         var priceLong = parseFloat(unitPrice.innerText);
-//         var soLuong = hangSoLuong.value;
-//         //var testUnitPrice = parseFloat(unitPrice.innerText);
-//         totalPrice = totalPrice + soLuong*priceLong;
-//     }
-
-//     document.getElementsByClassName("totalPrice")[0].innerText = totalPrice;
-// }
-
-
-
-function updateTotal(length, table) {
-    let total = 0;
-    for (let i = 0; i < length; i++) {
-        let amount = table.getElementsByClassName("tableRow")[i].getElementsByClassName("amout")[0].getElementsByClassName("sumPrice")[0].innerText;
-        total += Number(amount)
-    }
-    let totalPrice = document.getElementById("totalPrice");
-    totalPrice.innerText = total;
-}
 

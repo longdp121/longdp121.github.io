@@ -7,6 +7,7 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src="./script/qrcode.js" defer></script>
     <title>Document</title>
 </head>
 <body>
@@ -160,12 +161,66 @@
                                 <td style="border-bottom-style: hidden"></td>
                                 <td>Total</td>
                                 <td class="total">
-                                    <span id="totalPrice"></span>
+                                    <span id="totalPrice">0</span>
                                     <span>$</span>
                                 </td>
                             </tr>
                         </tfoot>
                     </table>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-start">
+                <div class="col-6">
+                    <div class="row d-flex flex-collum">
+                        <div class="col-12 d-flex justify-content-center bg-primary text-white">
+                            <h4>PAYMENT STATUS</h4>
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <label for="paymentStatus"></label>
+                            <select name="paymentStatus" onchange="paymentStatus(this)">
+                                <option value="fullPaid">Full Paid</option>
+                                <option value="deposit">Deposit</option>
+                                <option value="pending">Pending</option>
+                            </select>
+                        </div>
+                        <div class="col-12 d-flex justify-content-center d-none fullPaid">
+                            <h1>FULL PAID</h1>
+                        </div>
+                        <div class="col-12 d-flex flex-column justify-content-center d-none deposit">
+                            <div class="row">
+                                <div class="col-12">
+                                    <label for="depositAmount">Deposited amount:</label>
+                                    <input type="number" name="depositAmount" id="depositAmount" min="0" onchange="updateDepositAmount(this)">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 d-flex flex-row">
+                                    <div>
+                                        <p>Pending amount: </p>
+                                    </div>
+                                    <div>
+                                        <span id="pendinhAmount">0</span><span>$</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex flex-column align-items-center d-none pending">
+                            <div id="paymentLinkInput" class="d-flex flex-column w-50 align-items-center">
+                                <label for="paymentLink">Payment link:</label>
+                                <input type="text" name="paymentLink" id="paymentLink">
+                                <button type="button" onclick="qrCodeGenerate()">Creat QRCode</button>
+                            </div>
+                            <div id="qrCodePaymentDiv" class="d-none">
+                                <a href="" id="qrCodePayment" target="_blank"></a>
+                                <p>Scan or tap to pay!</p>
+                                <button type="button" onclick="editQrCode()" class="editQrCodeBtn">Edit qrCode</button>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex flex-column align-items-center">
+                            <p>Make all checks payable to</p>
+                            <p id="paymentFor">-</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

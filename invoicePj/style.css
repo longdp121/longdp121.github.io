@@ -28,10 +28,18 @@ pre {
     opacity: 100;
 }
 
+.editQrCodeBtn {
+    opacity: 0;
+}
+
 .addBlankRowBtn:hover {
     opacity: 100;
 }
 
 .removeRowBtn:hover {
+    opacity: 100;
+}
+
+.editQrCodeBtn:hover {
     opacity: 100;
 }
