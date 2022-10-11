@@ -16,8 +16,10 @@
         <select name="options" id="options" onchange="optionHandle()">
             <option value="none">none</option>
         </select>
+        <button type="button" onclick="viewTempleteleBtn()">View</button>
     </div>
-    <div class="container">
+    <div class="container" id="mainContentViewer"></div>
+    <div class="container" id="mainContentEditor">
         <!-- Invoice header and logo -->
         <div class="header">
             <div class="row d-flex justify-content-between">
@@ -99,7 +101,7 @@
                             <div id="childrennNumberInput" class="d-flex flex-row align-items-center d-none">
                                 <pre> + </pre>
                                 <input type="number" id="childrennNumber" min="0" style="width: 30px;">
-                                <label for="adultNumber">children</label>
+                                <label for="childrennNumber">children</label>
                                 <div id="removeChildrenBtn" class="opacity-0">
                                     <button type="button" class="btn btn-danger" onclick="removeChildren()">X</button>
                                 </div>
@@ -177,7 +179,7 @@
                         </div>
                         <div class="col-12 d-flex justify-content-center">
                             <label for="paymentStatus"></label>
-                            <select name="paymentStatus" onchange="paymentStatus(this)">
+                            <select name="paymentStatus" id="paymentStatus" onchange="paymentStatus(this)">
                                 <option value="fullPaid">Full Paid</option>
                                 <option value="deposit">Deposit</option>
                                 <option value="pending">Pending</option>
@@ -191,6 +193,7 @@
                                 <div class="col-12">
                                     <label for="depositAmount">Deposited amount:</label>
                                     <input type="number" name="depositAmount" id="depositAmount" min="0" onchange="updateDepositAmount(this)">
+                                    <label for="depositAmount">$</label>
                                 </div>
                             </div>
                             <div class="row">

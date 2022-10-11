@@ -2,6 +2,8 @@
 
 const dataApi = "https://mocki.io/v1/7d0fb43e-cdac-4696-9660-a63e78d465a9";
 
+// const dataApi = "https://demo.halongbaydoriscruise.com/tours.json";
+
 const today = new Date()
 const todayDate = document.getElementById("todayDate")
 const removeChildrenBtn = document.getElementById("removeChildrenBtn");
@@ -16,14 +18,14 @@ fetch(dataApi)
 .then((res) => res.json())
 .then((data) => {
     let optionsList = Object.keys(data.options);
-    console.log(optionsList)
+    // console.log(optionsList)
     optionsList.forEach(function(option) {
         let selectTag = document.getElementById("options");
         let optionTag = document.createElement("option");
-        console.log(optionTag)
+        // console.log(optionTag)
         optionTag.value = option;
-        console.log(option);
-        console.log(data.options[option].name)
+        // console.log(option);
+        // console.log(data.options[option].name)
         optionTag.innerText = data.options[option].name;
         selectTag.append(optionTag)
     })  
@@ -102,7 +104,102 @@ function optionSelect(e) {
         pendinhAmount.innerText = totalPrice.innerText;
     }
     pendinhAmount.innerText = Number(totalPrice.innerText) - Number(depositAmount.value);
-}
+};
+
+function viewTempleteleBtn() {
+    //Get all values
+    let customerNameInputValue = document.getElementById("customerNameInput").value;
+    let adultNumberInputValue = document.getElementById("adultNumber").value;
+    let childrennNumberInputValue = document.getElementById("childrennNumber").value;
+    let startDateInputValue = document.getElementById("startDate").value;
+    let priceTable = Array.from(document.getElementById("priceTable").children).map(function(item) {
+        let obj = {};
+        let tourName = item.getElementsByClassName("tourName")[0];
+        let unitPrice = item.getElementsByClassName("unitPrice")[0];
+        let unitAmount = item.getElementsByClassName("unitAmount")[0].getElementsByClassName("unitAmountInput")[0];
+        if (tourName.childElementCount === 2) {
+            obj.tourName = tourName.getElementsByTagName("select")[0].options[tourName.getElementsByTagName("select")[0].selectedIndex].text;
+            obj.unitPrice = null;
+        } else if (tourName.childElementCount === 1) {
+            obj.tourName = tourName.getElementsByTagName("input")[0].value;
+            obj.unitPirce = unitPrice.getElementsByTagName("input")[0].value;
+        };
+        obj.unitAmount = unitAmount.value;
+        return obj
+    });
+    let paymentStatusInputValue = document.getElementById("paymentStatus").options[document.getElementById("paymentStatus").selectedIndex].text;
+    let depositAmountInputValue = document.getElementById("depositAmount").value;
+
+    //Re-render invoice header
+    let mainContentEditor = document.getElementById("mainContentEditor");
+    let mainContentViewer = document.getElementById("mainContentViewer");
+    mainContentViewer.innerHTML = mainContentEditor.innerHTML;
+    mainContentEditor.classList.add("d-none");
+    ////Render customer name
+    let customerNameInputViewDiv = mainContentViewer.querySelector("#customerNameInput").parentElement;
+    let spanTagCustomerName = document.createElement("span");
+    spanTagCustomerName.innerText = customerNameInputValue;
+    customerNameInputViewDiv.removeChild(customerNameInputViewDiv.lastElementChild);
+    customerNameInputViewDiv.append(spanTagCustomerName);
+    ////Render group size
+    let adultNumberInputViewDiv = mainContentViewer.querySelector("#adultNumber").parentElement;
+    let spanTagAdultNumber = document.createElement("span");
+    spanTagAdultNumber.innerHTML = `&nbsp${adultNumberInputValue}`;
+    adultNumberInputViewDiv.removeChild(adultNumberInputViewDiv.firstElementChild);
+    adultNumberInputViewDiv.prepend(spanTagAdultNumber);
+    let childrenNumberInputViewDiv = mainContentViewer.querySelector("#childrennNumber").parentElement;
+    let spanChildrenNumber = document.createElement("span");
+    spanChildrenNumber.innerHTML = `&nbsp${childrennNumberInputValue}&nbsp`
+    childrenNumberInputViewDiv.replaceChild(spanChildrenNumber, childrenNumberInputViewDiv.querySelector("#childrennNumber"));
+    ////Render date
+    let startDateDiv = mainContentViewer.querySelector("#startDate").parentElement;
+    let spanTagStartDate = document.createElement("span");
+    spanTagStartDate.innerText = startDateInputValue;
+    startDateDiv.replaceChild(spanTagStartDate, startDateDiv.lastElementChild);
+
+    //Re-render table price
+    let priceTableViewDiv = mainContentViewer.querySelector("#priceTable");
+    let rows = priceTableViewDiv.getElementsByClassName("tableRow");
+    for (let i = 0; i < priceTableViewDiv.childElementCount; i++) {
+        let row = rows[i];
+        ////Render tourName
+        let tourName = row.getElementsByClassName("tourName")[0];
+        tourName.innerHTML = "";
+        let pTag = document.createElement("p");
+        pTag.innerText = priceTable[i].tourName;
+        // console.log(priceTable[i].tourName)
+        tourName.append(pTag);
+
+        ////Render unitPrice
+        let unitPrice = row.getElementsByClassName("unitPrice")[0];
+        if (unitPrice.children[0].tagName === "INPUT") {
+            let spanTag = document.createElement("span");
+            spanTag.innerText = priceTable[i].unitPirce;
+            // console.log(unitPrice.children[0]);
+            unitPrice.replaceChild(spanTag, unitPrice.children[0]);
+        };
+
+        ////////Render unitAmount
+        let unitAmount = row.getElementsByClassName("unitAmount")[0];
+        let spanTag = document.createElement("span");
+        spanTag.innerText = priceTable[i].unitAmount;
+        unitAmount.replaceChild(spanTag, unitAmount.children[0]);
+    };
+
+    //Re-render payment status
+    let paymentStatus = mainContentViewer.querySelector("#paymentStatus").parentElement;
+    console.log(paymentStatus);
+    let spanTag = document.createElement("span");
+    spanTag.innerText = paymentStatusInputValue;
+    paymentStatus.innerHTML = "";
+    paymentStatus.append(spanTag);
+    if (paymentStatusInputValue === "Deposit") {
+        let depositAmount = mainContentViewer.querySelector("#depositAmount").parentElement;
+        let spanTag = document.createElement("span");
+        spanTag.innerText = depositAmountInputValue;
+        depositAmount.replaceChild(spanTag, depositAmount.children[1]);
+    }
+};
 
 function untirPriceInput(e) {
     let inputValue = e.value;
@@ -343,4 +440,5 @@ addChildrenBtn.onmouseout = function() {
         addChildrenBtn.classList = "opacity-0"
     }
 };
+
 

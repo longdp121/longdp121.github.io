@@ -1,0 +1,120 @@
+{
+    "options": {
+        "HaThanhTravelmate": {
+            "name": "Ha Thanh Travelmate",
+            "logo": "imgs/LogoHaThanh.png",
+            "email": "sales@hathanhtravelmate.com",
+            "website": "https://hathanhtravelmate.com",
+            "options": [
+                {
+                    "optionName": "Hanoi Street Food Tour",
+                    "price": 25
+                },
+                {
+                    "optionName": "Hanoi Motorbike Food Tour",
+                    "price": 45
+                },
+                {
+                    "optionName": "Trang An fulld day tour",
+                    "price": 100
+                }
+            ]
+        },
+        "LaPinta": {
+            "name": "La Pinta Cruise",
+            "logo": "imgs/LogoLaPinta.png",
+            "email": " sales@halongbaylapintacruise.com",
+            "website": "https://halongbaylapintacruise.com",
+            "options": [
+                {
+                    "optionName": "2D1N - Deluxe Ocean View",
+                    "price": 298
+                },
+                {
+                    "optionName": "2D1N - Executive Ocean View",
+                    "price": 326
+                },
+                {
+                    "optionName": "2D1N - La Pinta Suite",
+                    "price": 362
+                },
+                {
+                    "optionName": "3D2N - Deluxe Ocean View",
+                    "price": 588
+                },
+                {
+                    "optionName": "3D2N - Executive Ocean View",
+                    "price": 644
+                },
+                {
+                    "optionName": "3D2N - La Pinta Suite",
+                    "price": 714
+                },
+                {
+                    "optionName": "Round trip transfer Hanoi – Halong – Hanoi",
+                    "price": 25
+                },
+                {
+                    "optionName": "Private 4 Seater Car Hanoi - Halong - Hanoi",
+                    "price": 155
+                },
+                {
+                    "optionName": "Private 7 Seater Car Hanoi - Halong - Hanoi",
+                    "price": 180
+                },
+                {
+                    "optionName": "Private 16 Seater Car Hanoi - Halong - Hanoi",
+                    "price": 25
+                }
+            ]
+        },
+        "Sapphire": {
+            "name": "Sapphire Cruise",
+            "logo": "imgs/LogoSapphire.png",
+            "email": " sales@sapphire-cruise.com",
+            "website": "https://sapphire-cruise.com",
+            "options": [
+                {
+                    "optionName": "2D1N - Deluxe Room",
+                    "price": 278
+                },
+                {
+                    "optionName": "2D1N - Premium Room",
+                    "price": 304
+                },
+                {
+                    "optionName": "2D1N - Suite Room",
+                    "price": 340
+                },
+                {
+                    "optionName": "3D2N - Deluxe Room",
+                    "price": 476
+                },
+                {
+                    "optionName": "3D2N - Premium Room",
+                    "price": 496
+                },
+                {
+                    "optionName": "3D2N - Suite Room",
+                    "price": 532
+                },
+                {
+                    "optionName": "Round trip transfer Hanoi – Halong – Hanoi",
+                    "price": 25
+                },
+                {
+                    "optionName": "Private 4 Seater Car Hanoi - Halong - Hanoi",
+                    "price": 155
+                },
+                {
+                    "optionName": "Private 7 Seater Car Hanoi - Halong - Hanoi",
+                    "price": 180
+                },
+                {
+                    "optionName": "Private 16 Seater Car Hanoi - Halong - Hanoi",
+                    "price": 25
+                }
+            ]
+        }
+    }
+}
