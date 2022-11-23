@@ -1,6 +1,6 @@
-// const dataApi = "http://localhost:3000/options"
+const dataApi = "https://github.com/longdp121/longdp121.github.io/blob/8ac801bfb8afede8709cab7d64890d31ebc4f3e7/invoicePj/data/tours.json"
 
-const dataApi = "https://mocki.io/v1/7d0fb43e-cdac-4696-9660-a63e78d465a9";
+// const dataApi = "https://mocki.io/v1/7d0fb43e-cdac-4696-9660-a63e78d465a9";
 
 // const dataApi = "https://demo.halongbaydoriscruise.com/data/tours.json";
 
