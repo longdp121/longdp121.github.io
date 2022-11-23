@@ -14,7 +14,9 @@ const childrennNumberInput = document.getElementById("childrennNumberInput");
 todayDate.textContent = `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()}`
 
 //Get data from API for option tag
-fetch(dataApi)
+fetch(dataApi, {
+    mode: 'no-cors'
+})
 .then((res) => res.json())
 .then((data) => {
     let optionsList = Object.keys(data.options);
