@@ -2,7 +2,7 @@
 
 const dataApi = "https://mocki.io/v1/7d0fb43e-cdac-4696-9660-a63e78d465a9";
 
-// const dataApi = "https://demo.halongbaydoriscruise.com/tours.json";
+// const dataApi = "https://demo.halongbaydoriscruise.com/data/tours.json";
 
 const today = new Date()
 const todayDate = document.getElementById("todayDate")

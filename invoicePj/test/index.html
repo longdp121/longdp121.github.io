@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JsPDF .fromHTML() - An Example</title>
+</head>
+<body id="body">
+    <div>
+        <div style="float:left;text-align:left;">
+            Matt NotMySurname
+        </div>
+        <div style="float:right;text-align:right;">
+            Definitely Not An Real
+            <br>
+            Addres 72
+        </div>
+    </div>
+    <br>
+    <div>
+        <table style="text-align:left;">
+            <tr>
+                <th>Item</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>iPhone 13</td>
+                <td>Just a phone</td>
+                <td>$1350</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <div>
+        <button id="generateAndSavePDF" onclick="generateAndSavePDF()">
+            Generate and save PDF File
+        </button>
+    </div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
